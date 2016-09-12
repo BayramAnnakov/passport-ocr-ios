@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Take Photo View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="TakePhotoViewController" customModule="PassportOCR" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Z5A-pq-2eJ">
+                                <rect key="frame" x="67" y="28" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="J2n-Wv-dgD"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FBa-hk-m3n">
+                                <rect key="frame" x="20" y="164" width="335" height="175"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="175" id="wNo-FD-5Al"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9gB-gM-OJu">
+                                <rect key="frame" x="20" y="539" width="335" height="70"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="dHJ-y5-pxF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="4cd-lx-a25">
+                                <rect key="frame" x="177" y="324" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="la5-cz-uhX">
+                                <rect key="frame" x="256" y="617" width="99" height="30"/>
+                                <state key="normal" title="Сделать фото"/>
+                                <connections>
+                                    <action selector="takePhotoClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mxg-mO-N3M"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="la5-cz-uhX" secondAttribute="bottom" constant="20" symbolic="YES" id="6B7-gP-YiL"/>
+                            <constraint firstItem="4cd-lx-a25" firstAttribute="centerX" secondItem="FBa-hk-m3n" secondAttribute="centerX" id="BSF-AC-YeR"/>
+                            <constraint firstItem="la5-cz-uhX" firstAttribute="trailing" secondItem="9gB-gM-OJu" secondAttribute="trailing" id="Bmf-gm-Mt2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="la5-cz-uhX" secondAttribute="trailing" constant="4" id="CUO-0u-Fh0"/>
+                            <constraint firstItem="Z5A-pq-2eJ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="Cel-iH-Ncj"/>
+                            <constraint firstItem="la5-cz-uhX" firstAttribute="top" secondItem="9gB-gM-OJu" secondAttribute="bottom" constant="8" id="FPh-8h-D4j"/>
+                            <constraint firstItem="FBa-hk-m3n" firstAttribute="leading" secondItem="9gB-gM-OJu" secondAttribute="leading" id="IEz-Vv-qad"/>
+                            <constraint firstItem="la5-cz-uhX" firstAttribute="trailing" secondItem="FBa-hk-m3n" secondAttribute="trailing" id="IKR-bf-iCY"/>
+                            <constraint firstItem="la5-cz-uhX" firstAttribute="top" secondItem="9gB-gM-OJu" secondAttribute="bottom" constant="8" symbolic="YES" id="Kou-lW-KEY"/>
+                            <constraint firstItem="FBa-hk-m3n" firstAttribute="top" secondItem="Z5A-pq-2eJ" secondAttribute="bottom" constant="8" symbolic="YES" id="OxP-R4-uRc"/>
+                            <constraint firstItem="Z5A-pq-2eJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aFU-be-yvx"/>
+                            <constraint firstItem="Z5A-pq-2eJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="51" id="juq-7P-adp"/>
+                            <constraint firstItem="Z5A-pq-2eJ" firstAttribute="centerX" secondItem="FBa-hk-m3n" secondAttribute="centerX" id="svT-to-a8b"/>
+                            <constraint firstItem="4cd-lx-a25" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="wJV-tQ-kCb"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="activityIndicatorView" destination="4cd-lx-a25" id="4II-l1-JGW"/>
+                        <outlet property="cameraImageView" destination="Z5A-pq-2eJ" id="z5T-B7-Fc5"/>
+                        <outlet property="codeTextView" destination="9gB-gM-OJu" id="agw-EH-CKo"/>
+                        <outlet property="mrcTextView" destination="FBa-hk-m3n" id="G9J-1h-pue"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="454.5" y="293.5"/>
+        </scene>
+    </scenes>
+</document>
