@@ -14,9 +14,7 @@ enum Sex {
 }
 
 struct PassportInfo {
-    private static let filePath = NSBundle.mainBundle().pathForResource("passportPattern", ofType: "txt")
-    private static let contentData = NSFileManager.defaultManager().contentsAtPath(filePath!)
-    private static let passportPattern = NSString(data: contentData!, encoding: NSUTF8StringEncoding) as! String
+    static let passportPattern: String! = Utils.stringFromTxtFile("passportPattern")
     
     let countryCode: String
     let surname: String
@@ -37,6 +35,7 @@ struct PassportInfo {
     
     
     init?(machineReadableCode code: String) {
+        
         var regex: NSRegularExpression!
         
         do {
@@ -50,7 +49,6 @@ struct PassportInfo {
         let range = NSRange(location: 0, length: code.characters.count)
         if let result = regex.firstMatchInString(code, options: [], range: range) {
             NSLog("\(result.components)")
-            
             
             countryCode = result.group(atIndex: 4, fromSource: code)
             surname = result.group(atIndex: 6, fromSource: code)

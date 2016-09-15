@@ -8,5 +8,6 @@ target 'PassportOCR' do
     pod 'UIImage-Resize'
     pod 'GPUImage'
     pod 'MRProgress'
+    pod 'MBProgressHUD', '~> 1.0.0'
 end
 

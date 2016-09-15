@@ -18,4 +18,10 @@ extension NSDate {
 
         return dateFormatter.dateFromString("19\(year)-\(month)-\(day)")
     }
+    
+    var stringDate: String {
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        return formatter.stringFromDate(self)
+    }
 }

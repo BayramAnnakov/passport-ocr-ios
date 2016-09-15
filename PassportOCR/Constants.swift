@@ -10,6 +10,11 @@ import Foundation
 
 struct NibNames {
     static let cameraOverlayViewController = "CameraOverlayViewController"
+    static let countryPicker = "CountryPicker"
+}
+
+struct CellIds {
+    static let Parameter = "parameterCell"
 }
 
 struct Constants {
