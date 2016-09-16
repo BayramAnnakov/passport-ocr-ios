@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'PassportOCRiOS_Example' do
+  pod 'PassportOCRiOS', :path => '../'
+
+  target 'PassportOCRiOS_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
