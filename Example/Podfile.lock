@@ -1,0 +1,16 @@
+PODS:
+  - passport-ocr-ios (0.1.0)
+
+DEPENDENCIES:
+  - passport-ocr-ios (from `../`)
+
+EXTERNAL SOURCES:
+  passport-ocr-ios:
+    :path: ../
+
+SPEC CHECKSUMS:
+  passport-ocr-ios: e9992ba6194bd31ad4c3087d14b74a7db7235324
+
+PODFILE CHECKSUM: d9be3fee0cf6d9952cf5ef805dc99b845e66a01e
+
+COCOAPODS: 1.0.1

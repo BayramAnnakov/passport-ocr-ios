@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'passport-ocr-ios_Example' do
+  pod 'passport-ocr-ios', :path => '../'
+
+  target 'passport-ocr-ios_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
