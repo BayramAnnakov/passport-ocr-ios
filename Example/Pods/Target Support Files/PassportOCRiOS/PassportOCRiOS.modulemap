@@ -1,0 +1,6 @@
+framework module PassportOCRiOS {
+  umbrella header "PassportOCRiOS-umbrella.h"
+
+  export *
+  module * { export * }
+}

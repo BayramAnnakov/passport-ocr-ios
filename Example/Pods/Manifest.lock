@@ -1,0 +1,58 @@
+PODS:
+  - GPUImage (0.1.7)
+  - MBProgressHUD (1.0.0)
+  - MRProgress (0.8.3):
+    - MRProgress/ActivityIndicator (= 0.8.3)
+    - MRProgress/Blur (= 0.8.3)
+    - MRProgress/Circular (= 0.8.3)
+    - MRProgress/Icons (= 0.8.3)
+    - MRProgress/NavigationBarProgress (= 0.8.3)
+    - MRProgress/Overlay (= 0.8.3)
+  - MRProgress/ActivityIndicator (0.8.3):
+    - MRProgress/Stopable
+  - MRProgress/Blur (0.8.3):
+    - MRProgress/Helper
+  - MRProgress/Circular (0.8.3):
+    - MRProgress/Helper
+    - MRProgress/ProgressBaseClass
+    - MRProgress/Stopable
+  - MRProgress/Helper (0.8.3)
+  - MRProgress/Icons (0.8.3)
+  - MRProgress/NavigationBarProgress (0.8.3):
+    - MRProgress/ProgressBaseClass
+  - MRProgress/Overlay (0.8.3):
+    - MRProgress/ActivityIndicator
+    - MRProgress/Blur
+    - MRProgress/Circular
+    - MRProgress/Helper
+    - MRProgress/Icons
+  - MRProgress/ProgressBaseClass (0.8.3)
+  - MRProgress/Stopable (0.8.3):
+    - MRProgress/Helper
+  - PassportOCRiOS (0.1.0)
+  - TesseractOCRiOS (4.0.0)
+  - UIImage-Resize (1.0.1)
+
+DEPENDENCIES:
+  - GPUImage
+  - MBProgressHUD (~> 1.0.0)
+  - MRProgress
+  - PassportOCRiOS (from `../`)
+  - TesseractOCRiOS (= 4.0.0)
+  - UIImage-Resize
+
+EXTERNAL SOURCES:
+  PassportOCRiOS:
+    :path: ../
+
+SPEC CHECKSUMS:
+  GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  MRProgress: 16de7cc9f347e8846797a770db102a323fe7ef09
+  PassportOCRiOS: b90e2cfcd68ddd3a03a0881b6883a8732bdabd5c
+  TesseractOCRiOS: 90638afbe43d082433f2e76b384c7901d23956df
+  UIImage-Resize: fa776860f10e6900bbaf53a73e494bdceaaccc77
+
+PODFILE CHECKSUM: 0fce6023cf118b23d3e036b93d1f0c1c3587dcdd
+
+COCOAPODS: 1.0.1

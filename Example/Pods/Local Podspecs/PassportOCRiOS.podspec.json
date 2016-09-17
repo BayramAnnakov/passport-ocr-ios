@@ -1,0 +1,21 @@
+{
+  "name": "PassportOCRiOS",
+  "version": "0.1.0",
+  "summary": "A Swift framework for machine readable documents recognition",
+  "homepage": "https://github.com/appintheair/passport-ocr-ios",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Michael": "mmbabaev@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/PassportOCRiOS.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "PassportOCRiOS/Classes/**/*"
+}
