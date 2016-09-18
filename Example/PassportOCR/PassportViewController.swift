@@ -9,6 +9,7 @@
 import UIKit
 import Darwin
 import MRProgress
+import PassportOCR
 
 class PassportViewController: UITableViewController, UINavigationControllerDelegate {
 

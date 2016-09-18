@@ -7,40 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		87569EB51D8A9E9E002093B1 /* CountryCodes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 87569EB41D8A9E9E002093B1 /* CountryCodes.txt */; };
-		8778AF4B1D7AA86600340C8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8778AF4A1D7AA86600340C8B /* AppDelegate.swift */; };
-		8778AF501D7AA86600340C8B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8778AF4E1D7AA86600340C8B /* Main.storyboard */; };
-		8778AF551D7AA86600340C8B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8778AF531D7AA86600340C8B /* LaunchScreen.storyboard */; };
-		8778AF5D1D7AAA1200340C8B /* PassportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8778AF5C1D7AAA1200340C8B /* PassportViewController.swift */; };
-		8795AC951D7CB4D500B66C38 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 8795AC941D7CB4D500B66C38 /* tessdata */; };
-		87CC2B501D86CC3800A10D6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87CC2B4F1D86CC3800A10D6C /* Assets.xcassets */; };
-		87E5361F1D88C9EB00EB1DBA /* PassportTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E5361E1D88C9EB00EB1DBA /* PassportTextField.swift */; };
+		87BA37711D8F35F900F3C02E /* PassportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8778AF5C1D7AAA1200340C8B /* PassportViewController.swift */; };
+		87BA37721D8F35F900F3C02E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8778AF4A1D7AA86600340C8B /* AppDelegate.swift */; };
+		87BA37731D8F35F900F3C02E /* PassportTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E5361E1D88C9EB00EB1DBA /* PassportTextField.swift */; };
+		87BA37751D8F35F900F3C02E /* Pods_PassportOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68094E3CED13E6A10E952C0C /* Pods_PassportOCR.framework */; };
+		87BA37771D8F35F900F3C02E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8778AF531D7AA86600340C8B /* LaunchScreen.storyboard */; };
+		87BA37781D8F35F900F3C02E /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 8795AC941D7CB4D500B66C38 /* tessdata */; };
+		87BA37791D8F35F900F3C02E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87CC2B4F1D86CC3800A10D6C /* Assets.xcassets */; };
+		87BA377A1D8F35F900F3C02E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8778AF4E1D7AA86600340C8B /* Main.storyboard */; };
+		87BA377B1D8F35F900F3C02E /* CountryCodes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 87569EB41D8A9E9E002093B1 /* CountryCodes.txt */; };
 		87EEF4DE1D7F01F5008FADA0 /* PassportOCRTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EEF4DD1D7F01F5008FADA0 /* PassportOCRTests.swift */; };
-		E8112603225C35CE3FD99A35 /* Pods_PassportOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68094E3CED13E6A10E952C0C /* Pods_PassportOCR.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		87EEF4E01D7F01F5008FADA0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8778AF3F1D7AA86600340C8B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8778AF461D7AA86600340C8B;
-			remoteInfo = PassportOCR;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		119D9EA4599EEB73E01A6F0B /* Pods-PassportOCR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PassportOCR.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PassportOCR/Pods-PassportOCR.debug.xcconfig"; sourceTree = "<group>"; };
 		1231E8D8D0E5326475EF8218 /* Pods-PassportOCR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PassportOCR.release.xcconfig"; path = "Pods/Target Support Files/Pods-PassportOCR/Pods-PassportOCR.release.xcconfig"; sourceTree = "<group>"; };
 		68094E3CED13E6A10E952C0C /* Pods_PassportOCR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PassportOCR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		87569EB41D8A9E9E002093B1 /* CountryCodes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CountryCodes.txt; sourceTree = "<group>"; };
-		8778AF471D7AA86600340C8B /* PassportOCR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PassportOCR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8778AF4A1D7AA86600340C8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8778AF4F1D7AA86600340C8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8778AF541D7AA86600340C8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8778AF561D7AA86600340C8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8778AF5C1D7AAA1200340C8B /* PassportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassportViewController.swift; sourceTree = "<group>"; };
 		8795AC941D7CB4D500B66C38 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
+		87BA376B1D8F347D00F3C02E /* PassportOCR copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "PassportOCR copy-Info.plist"; path = "/Users/Mihail/Desktop/podTest/PassportOCR/Example/PassportOCR copy-Info.plist"; sourceTree = "<absolute>"; };
+		87BA37811D8F35F900F3C02E /* ExamplePassportOCR copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ExamplePassportOCR copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		87BA37821D8F35FA00F3C02E /* ExamplePassportOCR copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "ExamplePassportOCR copy-Info.plist"; path = "/Users/Mihail/Desktop/podTest/PassportOCR/Example/ExamplePassportOCR copy-Info.plist"; sourceTree = "<absolute>"; };
 		87CC2B491D85EFC500A10D6C /* GPUImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GPUImage.framework; path = "../../../../Library/Developer/Xcode/DerivedData/PassportOCR-dgijcfhtmcmzjkgquousxotyhnoq/Build/Products/Debug-iphoneos/GPUImage.framework"; sourceTree = "<group>"; };
 		87CC2B4F1D86CC3800A10D6C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		87E5361E1D88C9EB00EB1DBA /* PassportTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassportTextField.swift; sourceTree = "<group>"; };
@@ -50,11 +42,11 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		8778AF441D7AA86600340C8B /* Frameworks */ = {
+		87BA37741D8F35F900F3C02E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E8112603225C35CE3FD99A35 /* Pods_PassportOCR.framework in Frameworks */,
+				87BA37751D8F35F900F3C02E /* Pods_PassportOCR.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,14 +116,16 @@
 				8778AF481D7AA86600340C8B /* Products */,
 				2FBD9BC97ED81EB5B02610CD /* Frameworks */,
 				490FA1BD0908D96E879EA5E4 /* Pods */,
+				87BA376B1D8F347D00F3C02E /* PassportOCR copy-Info.plist */,
+				87BA37821D8F35FA00F3C02E /* ExamplePassportOCR copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
 		8778AF481D7AA86600340C8B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8778AF471D7AA86600340C8B /* PassportOCR.app */,
 				87EEF4DB1D7F01F5008FADA0 /* PassportOCRTests.xctest */,
+				87BA37811D8F35F900F3C02E /* ExamplePassportOCR copy.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -158,24 +152,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8778AF461D7AA86600340C8B /* PassportOCR */ = {
+		87BA376E1D8F35F900F3C02E /* ExamplePassportOCR copy */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8778AF591D7AA86600340C8B /* Build configuration list for PBXNativeTarget "PassportOCR" */;
+			buildConfigurationList = 87BA377E1D8F35F900F3C02E /* Build configuration list for PBXNativeTarget "ExamplePassportOCR copy" */;
 			buildPhases = (
-				7E947E7455C3F2E343262107 /* [CP] Check Pods Manifest.lock */,
-				8778AF431D7AA86600340C8B /* Sources */,
-				8778AF441D7AA86600340C8B /* Frameworks */,
-				8778AF451D7AA86600340C8B /* Resources */,
-				051D3E818AF79E3BC9432BB5 /* [CP] Embed Pods Frameworks */,
-				B2568C41913FDB86CDE04695 /* [CP] Copy Pods Resources */,
+				87BA376F1D8F35F900F3C02E /* [CP] Check Pods Manifest.lock */,
+				87BA37701D8F35F900F3C02E /* Sources */,
+				87BA37741D8F35F900F3C02E /* Frameworks */,
+				87BA37761D8F35F900F3C02E /* Resources */,
+				87BA377C1D8F35F900F3C02E /* [CP] Embed Pods Frameworks */,
+				87BA377D1D8F35F900F3C02E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = PassportOCR;
+			name = "ExamplePassportOCR copy";
 			productName = PassportOCR;
-			productReference = 8778AF471D7AA86600340C8B /* PassportOCR.app */;
+			productReference = 87BA37811D8F35F900F3C02E /* ExamplePassportOCR copy.app */;
 			productType = "com.apple.product-type.application";
 		};
 		87EEF4DA1D7F01F5008FADA0 /* PassportOCRTests */ = {
@@ -189,7 +183,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				87EEF4E11D7F01F5008FADA0 /* PBXTargetDependency */,
 			);
 			name = PassportOCRTests;
 			productName = PassportOCRTests;
@@ -206,10 +199,6 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = empatika;
 				TargetAttributes = {
-					8778AF461D7AA86600340C8B = {
-						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = FECH3P2YXH;
-					};
 					87EEF4DA1D7F01F5008FADA0 = {
 						CreatedOnToolsVersion = 7.3.1;
 						TestTargetID = 8778AF461D7AA86600340C8B;
@@ -229,22 +218,22 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8778AF461D7AA86600340C8B /* PassportOCR */,
 				87EEF4DA1D7F01F5008FADA0 /* PassportOCRTests */,
+				87BA376E1D8F35F900F3C02E /* ExamplePassportOCR copy */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		8778AF451D7AA86600340C8B /* Resources */ = {
+		87BA37761D8F35F900F3C02E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8778AF551D7AA86600340C8B /* LaunchScreen.storyboard in Resources */,
-				8795AC951D7CB4D500B66C38 /* tessdata in Resources */,
-				87CC2B501D86CC3800A10D6C /* Assets.xcassets in Resources */,
-				8778AF501D7AA86600340C8B /* Main.storyboard in Resources */,
-				87569EB51D8A9E9E002093B1 /* CountryCodes.txt in Resources */,
+				87BA37771D8F35F900F3C02E /* LaunchScreen.storyboard in Resources */,
+				87BA37781D8F35F900F3C02E /* tessdata in Resources */,
+				87BA37791D8F35F900F3C02E /* Assets.xcassets in Resources */,
+				87BA377A1D8F35F900F3C02E /* Main.storyboard in Resources */,
+				87BA377B1D8F35F900F3C02E /* CountryCodes.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,22 +247,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		051D3E818AF79E3BC9432BB5 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PassportOCR/Pods-PassportOCR-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7E947E7455C3F2E343262107 /* [CP] Check Pods Manifest.lock */ = {
+		87BA376F1D8F35F900F3C02E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -288,7 +262,22 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		B2568C41913FDB86CDE04695 /* [CP] Copy Pods Resources */ = {
+		87BA377C1D8F35F900F3C02E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PassportOCR/Pods-PassportOCR-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		87BA377D1D8F35F900F3C02E /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -306,13 +295,13 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		8778AF431D7AA86600340C8B /* Sources */ = {
+		87BA37701D8F35F900F3C02E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8778AF5D1D7AAA1200340C8B /* PassportViewController.swift in Sources */,
-				8778AF4B1D7AA86600340C8B /* AppDelegate.swift in Sources */,
-				87E5361F1D88C9EB00EB1DBA /* PassportTextField.swift in Sources */,
+				87BA37711D8F35F900F3C02E /* PassportViewController.swift in Sources */,
+				87BA37721D8F35F900F3C02E /* AppDelegate.swift in Sources */,
+				87BA37731D8F35F900F3C02E /* PassportTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,14 +314,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		87EEF4E11D7F01F5008FADA0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8778AF461D7AA86600340C8B /* PassportOCR */;
-			targetProxy = 87EEF4E01D7F01F5008FADA0 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		8778AF4E1D7AA86600340C8B /* Main.storyboard */ = {
@@ -439,7 +420,7 @@
 			};
 			name = Release;
 		};
-		8778AF5A1D7AA86600340C8B /* Debug */ = {
+		87BA377F1D8F35F900F3C02E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 119D9EA4599EEB73E01A6F0B /* Pods-PassportOCR.debug.xcconfig */;
 			buildSettings = {
@@ -451,7 +432,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = PassportOCR/Info.plist;
+				INFOPLIST_FILE = "ExamplePassportOCR copy-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = empatika.PassportOCR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -459,7 +440,7 @@
 			};
 			name = Debug;
 		};
-		8778AF5B1D7AA86600340C8B /* Release */ = {
+		87BA37801D8F35F900F3C02E /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1231E8D8D0E5326475EF8218 /* Pods-PassportOCR.release.xcconfig */;
 			buildSettings = {
@@ -472,7 +453,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = PassportOCR/Info.plist;
+				INFOPLIST_FILE = "ExamplePassportOCR copy-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = empatika.PassportOCR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -516,11 +497,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8778AF591D7AA86600340C8B /* Build configuration list for PBXNativeTarget "PassportOCR" */ = {
+		87BA377E1D8F35F900F3C02E /* Build configuration list for PBXNativeTarget "ExamplePassportOCR copy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8778AF5A1D7AA86600340C8B /* Debug */,
-				8778AF5B1D7AA86600340C8B /* Release */,
+				87BA377F1D8F35F900F3C02E /* Debug */,
+				87BA37801D8F35F900F3C02E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

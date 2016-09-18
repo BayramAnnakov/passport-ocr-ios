@@ -9,7 +9,7 @@
 import Foundation
 
 public class Utils {
-    static func stringFromTxtFile(fileName: String) -> String? {
+    public static func stringFromTxtFile(fileName: String) -> String? {
         let filePath = NSBundle.mainBundle().pathForResource(fileName, ofType: "txt")
         let contentData = NSFileManager.defaultManager().contentsAtPath(filePath!)
         return NSString(data: contentData!, encoding: NSUTF8StringEncoding) as? String

@@ -29,7 +29,7 @@ PODS:
   - MRProgress/ProgressBaseClass (0.8.3)
   - MRProgress/Stopable (0.8.3):
     - MRProgress/Helper
-  - PassportOCR (0.1.4):
+  - PassportOCR (0.1.5):
     - GPUImage
     - TesseractOCRiOS
     - UIImage-Resize
@@ -49,7 +49,7 @@ SPEC CHECKSUMS:
   GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MRProgress: 16de7cc9f347e8846797a770db102a323fe7ef09
-  PassportOCR: a8fa23d93320580b564319646c6d02a70aee3a67
+  PassportOCR: 5ecf44be7df2c03a02953745e9929da12f3176dc
   TesseractOCRiOS: 90638afbe43d082433f2e76b384c7901d23956df
   UIImage-Resize: fa776860f10e6900bbaf53a73e494bdceaaccc77
 
