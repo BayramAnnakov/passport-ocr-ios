@@ -1,11 +1,14 @@
+ # Uncomment this line to define a global platform for your project
+platform :ios, '8.0'
+# Uncomment this line if you're using Swift
 use_frameworks!
 
-target 'passport-ocr-ios_Example' do
-  pod 'passport-ocr-ios', :path => '../'
-
-  target 'passport-ocr-ios_Tests' do
-    inherit! :search_paths
-
-    
-  end
+target 'PassportOCR' do
+    	pod 'passport-ocr-ios', :path => '../'
+	pod 'TesseractOCRiOS', '4.0.0'
+	pod 'UIImage-Resize'
+    	pod 'GPUImage'
+    	pod 'MRProgress'
+    	pod 'MBProgressHUD', '~> 1.0.0'
 end
+

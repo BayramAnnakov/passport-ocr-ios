@@ -1,9 +1,9 @@
-# passport-ocr-ios
+# PassportOCR
 
-[![CI Status](http://img.shields.io/travis/Michael/passport-ocr-ios.svg?style=flat)](https://travis-ci.org/Michael/passport-ocr-ios)
-[![Version](https://img.shields.io/cocoapods/v/passport-ocr-ios.svg?style=flat)](http://cocoapods.org/pods/passport-ocr-ios)
-[![License](https://img.shields.io/cocoapods/l/passport-ocr-ios.svg?style=flat)](http://cocoapods.org/pods/passport-ocr-ios)
-[![Platform](https://img.shields.io/cocoapods/p/passport-ocr-ios.svg?style=flat)](http://cocoapods.org/pods/passport-ocr-ios)
+[![CI Status](http://img.shields.io/travis/Michael/PassportOCR.svg?style=flat)](https://travis-ci.org/Michael/PassportOCR)
+[![Version](https://img.shields.io/cocoapods/v/PassportOCR.svg?style=flat)](http://cocoapods.org/pods/PassportOCR)
+[![License](https://img.shields.io/cocoapods/l/PassportOCR.svg?style=flat)](http://cocoapods.org/pods/PassportOCR)
+[![Platform](https://img.shields.io/cocoapods/p/PassportOCR.svg?style=flat)](http://cocoapods.org/pods/PassportOCR)
 
 ## Example
 
@@ -13,11 +13,11 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Installation
 
-passport-ocr-ios is available through [CocoaPods](http://cocoapods.org). To install
+PassportOCR is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "passport-ocr-ios"
+pod "PassportOCR"
 ```
 
 ## Author
@@ -26,4 +26,4 @@ Michael, mmbabaev@gmail.com
 
 ## License
 
-passport-ocr-ios is available under the MIT license. See the LICENSE file for more info.
+PassportOCR is available under the MIT license. See the LICENSE file for more info.
