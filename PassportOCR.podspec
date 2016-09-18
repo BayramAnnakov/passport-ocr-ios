@@ -30,7 +30,7 @@ Pod::Spec.new do |s|
   s.source_files = 'PassportOCR/Classes/**/*'
   
   # s.resource_bundles = {
-  #   'PassportOCRiOS' => ['PassportOCR/Assets/*.txt’]
+  #   'PassportOCRiOS' => ['PassportOCR/Assets/**/*’]
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
@@ -38,5 +38,6 @@ Pod::Spec.new do |s|
   
   s.dependency 'TesseractOCRiOS'
   # '~> 4.0.0'
-  
+  s.dependency 'UIImage-Resize'
+  s.dependency 'GPUImage'
 end

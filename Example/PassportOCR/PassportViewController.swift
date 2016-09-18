@@ -8,8 +8,6 @@
 
 import UIKit
 import Darwin
-
-import TesseractOCR
 import MRProgress
 
 class PassportViewController: UITableViewController, UINavigationControllerDelegate {

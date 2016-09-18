@@ -7,29 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		87198AD41D7DD7B500128C49 /* PassportInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87198AD31D7DD7B500128C49 /* PassportInfo.swift */; };
-		87257A3C1D7E4E2E006B41A5 /* NSTextCheckingResultExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87257A3B1D7E4E2E006B41A5 /* NSTextCheckingResultExtension.swift */; };
 		87569EB51D8A9E9E002093B1 /* CountryCodes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 87569EB41D8A9E9E002093B1 /* CountryCodes.txt */; };
-		87569EB91D8A9F22002093B1 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87569EB81D8A9F22002093B1 /* Utils.swift */; };
-		87569EBB1D8AA637002093B1 /* CountryPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87569EBA1D8AA637002093B1 /* CountryPicker.xib */; };
-		87569EBD1D8AAF3B002093B1 /* PickerViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87569EBC1D8AAF3B002093B1 /* PickerViewContainer.swift */; };
 		8778AF4B1D7AA86600340C8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8778AF4A1D7AA86600340C8B /* AppDelegate.swift */; };
 		8778AF501D7AA86600340C8B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8778AF4E1D7AA86600340C8B /* Main.storyboard */; };
 		8778AF551D7AA86600340C8B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8778AF531D7AA86600340C8B /* LaunchScreen.storyboard */; };
 		8778AF5D1D7AAA1200340C8B /* PassportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8778AF5C1D7AAA1200340C8B /* PassportViewController.swift */; };
-		8778AF601D7AAE2A00340C8B /* CameraOverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8778AF5E1D7AAE2A00340C8B /* CameraOverlayViewController.swift */; };
-		8778AF611D7AAE2A00340C8B /* CameraOverlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8778AF5F1D7AAE2A00340C8B /* CameraOverlayViewController.xib */; };
-		8778AF631D7AAE5700340C8B /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8778AF621D7AAE5700340C8B /* OverlayView.swift */; };
-		8778AF651D7AB81700340C8B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8778AF641D7AB81700340C8B /* Constants.swift */; };
 		8795AC951D7CB4D500B66C38 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 8795AC941D7CB4D500B66C38 /* tessdata */; };
-		87CC2B481D85CBCD00A10D6C /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CC2B471D85CBCD00A10D6C /* UIImageExtension.swift */; };
-		87CC2B4E1D86CA3A00A10D6C /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CC2B4D1D86CA3A00A10D6C /* UIViewControllerExtension.swift */; };
 		87CC2B501D86CC3800A10D6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87CC2B4F1D86CC3800A10D6C /* Assets.xcassets */; };
 		87E5361F1D88C9EB00EB1DBA /* PassportTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E5361E1D88C9EB00EB1DBA /* PassportTextField.swift */; };
-		87EEF4D21D7EDB2E008FADA0 /* NSDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EEF4D11D7EDB2E008FADA0 /* NSDateExtension.swift */; };
-		87EEF4D41D7EF116008FADA0 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EEF4D31D7EF116008FADA0 /* StringExtension.swift */; };
 		87EEF4DE1D7F01F5008FADA0 /* PassportOCRTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EEF4DD1D7F01F5008FADA0 /* PassportOCRTests.swift */; };
-		87EEF4E61D7F07F5008FADA0 /* passportPattern.txt in Resources */ = {isa = PBXBuildFile; fileRef = 87EEF4E51D7F07F5008FADA0 /* passportPattern.txt */; };
 		E8112603225C35CE3FD99A35 /* Pods_PassportOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68094E3CED13E6A10E952C0C /* Pods_PassportOCR.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,34 +33,20 @@
 		119D9EA4599EEB73E01A6F0B /* Pods-PassportOCR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PassportOCR.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PassportOCR/Pods-PassportOCR.debug.xcconfig"; sourceTree = "<group>"; };
 		1231E8D8D0E5326475EF8218 /* Pods-PassportOCR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PassportOCR.release.xcconfig"; path = "Pods/Target Support Files/Pods-PassportOCR/Pods-PassportOCR.release.xcconfig"; sourceTree = "<group>"; };
 		68094E3CED13E6A10E952C0C /* Pods_PassportOCR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PassportOCR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		87198AD31D7DD7B500128C49 /* PassportInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassportInfo.swift; sourceTree = "<group>"; };
-		87257A3B1D7E4E2E006B41A5 /* NSTextCheckingResultExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSTextCheckingResultExtension.swift; sourceTree = "<group>"; };
 		87569EB41D8A9E9E002093B1 /* CountryCodes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CountryCodes.txt; sourceTree = "<group>"; };
-		87569EB81D8A9F22002093B1 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		87569EBA1D8AA637002093B1 /* CountryPicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CountryPicker.xib; sourceTree = "<group>"; };
-		87569EBC1D8AAF3B002093B1 /* PickerViewContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerViewContainer.swift; sourceTree = "<group>"; };
 		8778AF471D7AA86600340C8B /* PassportOCR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PassportOCR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8778AF4A1D7AA86600340C8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8778AF4F1D7AA86600340C8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8778AF541D7AA86600340C8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8778AF561D7AA86600340C8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8778AF5C1D7AAA1200340C8B /* PassportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassportViewController.swift; sourceTree = "<group>"; };
-		8778AF5E1D7AAE2A00340C8B /* CameraOverlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraOverlayViewController.swift; sourceTree = "<group>"; };
-		8778AF5F1D7AAE2A00340C8B /* CameraOverlayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CameraOverlayViewController.xib; sourceTree = "<group>"; };
-		8778AF621D7AAE5700340C8B /* OverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
-		8778AF641D7AB81700340C8B /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8795AC941D7CB4D500B66C38 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
-		87CC2B471D85CBCD00A10D6C /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		87CC2B491D85EFC500A10D6C /* GPUImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GPUImage.framework; path = "../../../../Library/Developer/Xcode/DerivedData/PassportOCR-dgijcfhtmcmzjkgquousxotyhnoq/Build/Products/Debug-iphoneos/GPUImage.framework"; sourceTree = "<group>"; };
-		87CC2B4D1D86CA3A00A10D6C /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		87CC2B4F1D86CC3800A10D6C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		87E5361E1D88C9EB00EB1DBA /* PassportTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassportTextField.swift; sourceTree = "<group>"; };
-		87EEF4D11D7EDB2E008FADA0 /* NSDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtension.swift; sourceTree = "<group>"; };
-		87EEF4D31D7EF116008FADA0 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		87EEF4DB1D7F01F5008FADA0 /* PassportOCRTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PassportOCRTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		87EEF4DD1D7F01F5008FADA0 /* PassportOCRTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassportOCRTests.swift; sourceTree = "<group>"; };
 		87EEF4DF1D7F01F5008FADA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		87EEF4E51D7F07F5008FADA0 /* passportPattern.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = passportPattern.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,9 +89,6 @@
 		87257A371D7E4812006B41A5 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				87569EB81D8A9F22002093B1 /* Utils.swift */,
-				8778AF641D7AB81700340C8B /* Constants.swift */,
-				87EEF4E51D7F07F5008FADA0 /* passportPattern.txt */,
 				87569EB41D8A9E9E002093B1 /* CountryCodes.txt */,
 				8778AF561D7AA86600340C8B /* Info.plist */,
 				8778AF4A1D7AA86600340C8B /* AppDelegate.swift */,
@@ -129,32 +98,10 @@
 			name = Helper;
 			sourceTree = "<group>";
 		};
-		87257A3A1D7E4E1D006B41A5 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				87257A3B1D7E4E2E006B41A5 /* NSTextCheckingResultExtension.swift */,
-				87EEF4D11D7EDB2E008FADA0 /* NSDateExtension.swift */,
-				87EEF4D31D7EF116008FADA0 /* StringExtension.swift */,
-				87CC2B471D85CBCD00A10D6C /* UIImageExtension.swift */,
-				87CC2B4D1D86CA3A00A10D6C /* UIViewControllerExtension.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		874ACE051D805EEB00B3EB50 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				87198AD31D7DD7B500128C49 /* PassportInfo.swift */,
-			);
-			name = Models;
-			sourceTree = "<group>";
-		};
 		874ACE061D805EF900B3EB50 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				8778AF5C1D7AAA1200340C8B /* PassportViewController.swift */,
-				8778AF5E1D7AAE2A00340C8B /* CameraOverlayViewController.swift */,
-				8778AF621D7AAE5700340C8B /* OverlayView.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -163,11 +110,8 @@
 			isa = PBXGroup;
 			children = (
 				8778AF4E1D7AA86600340C8B /* Main.storyboard */,
-				8778AF5F1D7AAE2A00340C8B /* CameraOverlayViewController.xib */,
 				8778AF531D7AA86600340C8B /* LaunchScreen.storyboard */,
 				87E5361E1D88C9EB00EB1DBA /* PassportTextField.swift */,
-				87569EBA1D8AA637002093B1 /* CountryPicker.xib */,
-				87569EBC1D8AAF3B002093B1 /* PickerViewContainer.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -197,8 +141,6 @@
 			children = (
 				874ACE071D805F0100B3EB50 /* Views */,
 				874ACE061D805EF900B3EB50 /* Controllers */,
-				874ACE051D805EEB00B3EB50 /* Models */,
-				87257A3A1D7E4E1D006B41A5 /* Extensions */,
 				87257A371D7E4812006B41A5 /* Helper */,
 			);
 			path = PassportOCR;
@@ -300,9 +242,6 @@
 			files = (
 				8778AF551D7AA86600340C8B /* LaunchScreen.storyboard in Resources */,
 				8795AC951D7CB4D500B66C38 /* tessdata in Resources */,
-				8778AF611D7AAE2A00340C8B /* CameraOverlayViewController.xib in Resources */,
-				87EEF4E61D7F07F5008FADA0 /* passportPattern.txt in Resources */,
-				87569EBB1D8AA637002093B1 /* CountryPicker.xib in Resources */,
 				87CC2B501D86CC3800A10D6C /* Assets.xcassets in Resources */,
 				8778AF501D7AA86600340C8B /* Main.storyboard in Resources */,
 				87569EB51D8A9E9E002093B1 /* CountryCodes.txt in Resources */,
@@ -371,19 +310,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87257A3C1D7E4E2E006B41A5 /* NSTextCheckingResultExtension.swift in Sources */,
-				8778AF651D7AB81700340C8B /* Constants.swift in Sources */,
 				8778AF5D1D7AAA1200340C8B /* PassportViewController.swift in Sources */,
-				87CC2B481D85CBCD00A10D6C /* UIImageExtension.swift in Sources */,
-				8778AF631D7AAE5700340C8B /* OverlayView.swift in Sources */,
-				87569EB91D8A9F22002093B1 /* Utils.swift in Sources */,
-				87569EBD1D8AAF3B002093B1 /* PickerViewContainer.swift in Sources */,
-				87EEF4D21D7EDB2E008FADA0 /* NSDateExtension.swift in Sources */,
-				87EEF4D41D7EF116008FADA0 /* StringExtension.swift in Sources */,
-				87198AD41D7DD7B500128C49 /* PassportInfo.swift in Sources */,
 				8778AF4B1D7AA86600340C8B /* AppDelegate.swift in Sources */,
-				87CC2B4E1D86CA3A00A10D6C /* UIViewControllerExtension.swift in Sources */,
-				8778AF601D7AAE2A00340C8B /* CameraOverlayViewController.swift in Sources */,
 				87E5361F1D88C9EB00EB1DBA /* PassportTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

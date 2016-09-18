@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Utils {
+public class Utils {
     static func stringFromTxtFile(fileName: String) -> String? {
         let filePath = NSBundle.mainBundle().pathForResource(fileName, ofType: "txt")
         let contentData = NSFileManager.defaultManager().contentsAtPath(filePath!)

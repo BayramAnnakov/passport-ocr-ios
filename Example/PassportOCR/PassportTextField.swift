@@ -13,7 +13,6 @@ enum TextFieldType {
 }
 
 class PassportTextField: UITextField {
-
     var editType: TextFieldType {
         set {
             editTypeValue = String(newValue)

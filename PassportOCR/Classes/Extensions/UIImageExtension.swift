@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import UIImage_Resize
 import GPUImage
 
 extension UIImage {

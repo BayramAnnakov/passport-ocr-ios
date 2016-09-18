@@ -4,10 +4,7 @@ platform :ios, '8.0'
 use_frameworks!
 
 target 'PassportOCR' do
-    	pod 'passport-ocr-ios', :path => '../'
-	pod 'TesseractOCRiOS', '4.0.0'
-	pod 'UIImage-Resize'
-    	pod 'GPUImage'
+    	pod ‘PassportOCR’, :path => '../'
     	pod 'MRProgress'
     	pod 'MBProgressHUD', '~> 1.0.0'
 end
