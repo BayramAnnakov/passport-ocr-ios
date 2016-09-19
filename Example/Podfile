@@ -1,11 +1,11 @@
- # Uncomment this line to define a global platform for your project
-platform :ios, '8.0'
-# Uncomment this line if you're using Swift
 use_frameworks!
 
-target 'PassportOCR' do
-    	pod ‘PassportOCR’, :path => '../'
-    	pod 'MRProgress'
-    	pod 'MBProgressHUD', '~> 1.0.0'
-end
+target 'DocumentsOCR_Example' do
+  pod 'DocumentsOCR', :path => '../'
 
+  target 'DocumentsOCR_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
