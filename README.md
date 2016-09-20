@@ -11,15 +11,16 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Requirements
 
+To use this framework, add [tessdata/eng.traineddata] to your app repository. 
+
 ## Installation
 
-DocumentsOCR is available through [CocoaPods](http://cocoapods.org). To install
+DocumentsOCR is [available](https://cocoapods.org/?q=Documents) through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "DocumentsOCR"
+pod "DocumentsOCR", '~> 0.2.0'
 ```
-
 ## Author
 
 Michael, mmbabaev@gmail.com
@@ -27,3 +28,11 @@ Michael, mmbabaev@gmail.com
 ## License
 
 DocumentsOCR is available under the MIT license. See the LICENSE file for more info.
+
+### TODO
+
+- [ ] fix minor UI defects in example 
+- [ ] code refactoring
+- [ ] pod string for all versions (without using ~> version")
+- [ ] check visa document recognitions
+- [ ] unit tests
