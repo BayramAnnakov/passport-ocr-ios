@@ -9,10 +9,7 @@
 import UIKit
 
 public class CameraOverlayView: UIView {
-
-    public static func test() {}
     
-    @IBOutlet weak var passportBorder: UIView!
     @IBOutlet weak var codeBorder: UIView!
     
     var passportScanner: PassportScanner!

@@ -34,9 +34,6 @@ class PassportViewController: UITableViewController {
         
         self.cameraImageView.contentMode = .ScaleAspectFit
         
-        let d = NSDate()
-        print(d.stringDate)
-        
         // Set up country fields:
         
         let countryPicker = UIPickerView()

@@ -12,10 +12,14 @@ import GPUImage
 
 extension UIImage {
     func croppedImageWithSize(rect: CGRect) -> UIImage {
+//        
+//        let subImage = CGImageCreateWithImageInRect(self.CGImage, rect)
+//        return UIImage(CGImage: subImage!)
+        
         
         let imageRef: CGImageRef! = CGImageCreateWithImageInRect(self.CGImage, rect)
         
-        let croppedImage: UIImage =   UIImage(CGImage: imageRef, scale: self.scale, orientation: self.imageOrientation)
+        let croppedImage: UIImage = UIImage(CGImage: imageRef, scale: self.scale, orientation: self.imageOrientation)
         
         let selectedFilter = GPUImageTransformFilter()
         selectedFilter.setInputRotation(kGPUImageNoRotation, atIndex: 0)

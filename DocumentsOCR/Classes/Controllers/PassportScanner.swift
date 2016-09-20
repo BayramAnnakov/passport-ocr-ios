@@ -31,9 +31,7 @@ extension PassportScanner {
             
             imagePicker.delegate = self
             
-            let bundle = PodAsset.bundleForPod("DocumentsOCR")
-            let cameraVC = CameraOverlayViewController(nibName: NibNames.cameraOverlayViewController, bundle: bundle!)
-            let overlayView = cameraVC.view as! CameraOverlayView
+            let overlayView = cameraOverlayView
             let width = self.imagePicker.view.frame.width
             let height = self.imagePicker.view.frame.height
             let frame = CGRect(x: 0, y: 0, width: width, height: height)
@@ -41,9 +39,6 @@ extension PassportScanner {
             
             imagePicker.modalPresentationStyle = .FullScreen
             viewController.presentViewController(imagePicker, animated: true, completion: {
-                
-                overlayView.passportBorder.layer.borderWidth = 2.0
-                overlayView.passportBorder.layer.borderColor = UIColor.blackColor().CGColor
                 
                 overlayView.codeBorder.layer.borderWidth = 5.0
                 overlayView.codeBorder.layer.borderColor = UIColor.redColor().CGColor
@@ -63,8 +58,39 @@ extension PassportScanner {
         NSLog("\(image.size)")
         
         // Magic numbers. Work for iphone 6 screen
-        let rect = CGRectMake(3000, 0, 1000, 2448)
+        
+        //let borderHeight = CGFloat(500)
+        
+//        let size1 = viewController.view.frame.size
+//        let size2 = image.size
+//        let w1 = size1.width
+//        let w2 = size2.width
+//        let h1 = size1.height
+//        let h2 = (w2 * h1) / w1
+//        let y = (h2 - borderHeight) / 2
+//        let rect = CGRectMake(y, 0, borderHeight, image.size.width)
+        
+        
+        let viewControllerSize = viewController.view.frame.size
+        let vcWidth = viewControllerSize.width
+        let vcHeight = viewControllerSize.height
+        
+        let cameraImageWidth = image.size.width
+        let cameraImageHeight = (cameraImageWidth * vcHeight) / vcWidth
+        
+        let vcBorderHeight = cameraOverlayView.codeBorder.frame.size.height
+        let borderHeight = (vcBorderHeight * cameraImageWidth) / vcWidth
+       
+        print("Border height: \(borderHeight)")
+        
+        let cameraImageY = (cameraImageHeight - borderHeight) / 2
+        
+        let rect = CGRectMake(cameraImageY, 0, borderHeight, image.size.width)
+        
         let cropped = image.croppedImageWithSize(rect)
+        self.receivedImage(cropped)
+    
+        print("Cropped: \(cropped.size)")
         
         self.receivedImage(cropped)
         
@@ -79,6 +105,13 @@ extension PassportScanner {
                 self.receivedInfo(info)
             }
         }
+    }
+    
+    private var cameraOverlayView: CameraOverlayView {
+        let bundle = PodAsset.bundleForPod("DocumentsOCR")
+        let cameraVC = CameraOverlayViewController(nibName: NibNames.cameraOverlayViewController, bundle: bundle!)
+        let overlayView = cameraVC.view as! CameraOverlayView
+        return overlayView
     }
 }
 

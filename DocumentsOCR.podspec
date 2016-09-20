@@ -39,6 +39,7 @@ Pod::Spec.new do |s|
   s.frameworks = 'UIKit'
   
   s.dependency 'TesseractOCRiOS', '~> 4.0.0'
+  #s.dependency 'WDImagePicker'
   s.dependency 'PodAsset'
   s.dependency 'UIImage-Resize'
   s.dependency 'GPUImage'

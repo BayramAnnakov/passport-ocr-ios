@@ -30,22 +30,20 @@
                         <action selector="cancelButtonClicked:" destination="i5M-Pr-FkT" eventType="touchUpInside" id="jqt-cM-rbJ"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aq8-eL-xhw">
-                    <rect key="frame" x="8" y="451" width="359" height="57"/>
-                </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WjM-ck-c3G">
-                    <rect key="frame" x="8" y="262" width="359" height="246"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aq8-eL-xhw">
+                    <rect key="frame" x="0.0" y="289" width="375" height="90"/>
+                    <color key="backgroundColor" red="0.65969551282051275" green="0.18069087995348332" blue="0.19548233647129598" alpha="0.37365301724137934" colorSpace="calibratedRGB"/>
                 </view>
             </subviews>
             <constraints>
-                <constraint firstItem="Sft-Iw-wJR" firstAttribute="leading" secondItem="WjM-ck-c3G" secondAttribute="leading" id="CAr-hL-chg"/>
-                <constraint firstItem="WjM-ck-c3G" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="51.5" id="LHF-in-l5p"/>
-                <constraint firstItem="cm0-0M-N08" firstAttribute="centerX" secondItem="WjM-ck-c3G" secondAttribute="centerX" id="OiR-r9-xqX"/>
-                <constraint firstItem="Sft-Iw-wJR" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottomMargin" id="Xh4-RY-HhP"/>
-                <constraint firstItem="WjM-ck-c3G" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailingMargin" id="bj6-tN-hBI"/>
-                <constraint firstItem="WjM-ck-c3G" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="c2R-Uw-y0N"/>
-                <constraint firstItem="WjM-ck-c3G" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="262" id="fIZ-hR-br8"/>
-                <constraint firstItem="Sft-Iw-wJR" firstAttribute="baseline" secondItem="cm0-0M-N08" secondAttribute="baseline" id="xda-49-6kE"/>
+                <constraint firstItem="Sft-Iw-wJR" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottomMargin" id="0J3-Ty-Ypn"/>
+                <constraint firstItem="Sft-Iw-wJR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="1kF-6f-aKO"/>
+                <constraint firstItem="aq8-eL-xhw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Oj9-mm-mT9"/>
+                <constraint firstItem="aq8-eL-xhw" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="UFs-no-bkl"/>
+                <constraint firstItem="aq8-eL-xhw" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="289" id="aNM-UJ-3tE"/>
+                <constraint firstItem="Sft-Iw-wJR" firstAttribute="baseline" secondItem="cm0-0M-N08" secondAttribute="baseline" id="huc-UU-TyG"/>
+                <constraint firstItem="aq8-eL-xhw" firstAttribute="centerX" secondItem="cm0-0M-N08" secondAttribute="centerX" id="iGK-m8-6Yn"/>
+                <constraint firstAttribute="trailing" secondItem="aq8-eL-xhw" secondAttribute="trailing" id="s0b-dH-s1B"/>
             </constraints>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -56,7 +54,6 @@
             </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="codeBorder" destination="aq8-eL-xhw" id="HIf-dd-a4H"/>
-                <outlet property="passportBorder" destination="WjM-ck-c3G" id="VIq-aJ-SYb"/>
             </connections>
             <point key="canvasLocation" x="421.5" y="462.5"/>
         </view>
