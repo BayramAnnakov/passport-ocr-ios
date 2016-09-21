@@ -19,7 +19,7 @@ extension NSDate {
         let year = code[0...3]
         let month = code[4...5]
         let day = code[6...7]
-
+        
         return simpleFormatter.dateFromString("\(year)-\(month)-\(day)")
     }
     

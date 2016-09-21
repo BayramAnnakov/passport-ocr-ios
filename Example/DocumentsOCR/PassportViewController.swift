@@ -94,21 +94,16 @@ extension PassportViewController: PassportScannerDelegate {
     func didFinishScan(withInfo info: PassportInfo) {
         NSLog("Info: \(info)")
         
-        countryField.text = info.countryCode
-        surnameField.text = info.surname
-        var namesText = ""
-        for name in info.names {
-            if name != "" {
-                namesText.appendContentsOf(name + " ")
-            }
-        }
+        countryField.text = info.issuingCountryCode
+        surnameField.text = info.lastname
         
-        nameField.text = namesText
+        nameField.text = info.name
         numberField.text = info.passportNumber
         nationalityField.text = info.nationalityCode
-        dobField.text = info.dayOfBirth?.stringDate
+        dobField.text = info.dateOfBirth?.stringDate
+        
         let sex: String = {
-            switch info.sex {
+            switch info.gender {
             case .Female:
                 return "Женщина"
             case .Male:
@@ -122,9 +117,10 @@ extension PassportViewController: PassportScannerDelegate {
         personalNumberField.text = info.personalNumber
     }
     
-    func didFailedScan() {
-        NSLog("Ошибка")
-        self.showErrorAlert(withMessage: "Произошла ошибка распознования")
+    
+    func didFailed(error: NSError) {
+        NSLog("Ошибка \(error.localizedDescription)")
+        self.showErrorAlert(withMessage: error.localizedDescription)
     }
 }
 

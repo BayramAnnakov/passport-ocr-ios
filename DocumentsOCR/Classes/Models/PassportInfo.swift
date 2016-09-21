@@ -10,31 +10,48 @@ import Foundation
 import TesseractOCR
 import PodAsset
 
-public enum Sex {
+public enum Gender { ///gender
     case Male, Female, Unknown
 }
 
+/// Struct-container for recognition fields of passport machine readable code
+
 public struct PassportInfo {
-    private static let bundle = PodAsset.bundleForPod("DocumentsOCR")
-    static let passportPattern: String! = Utils.stringFromTxtFile("passportPattern", inBundle: bundle)
     
-    public let countryCode: String
-    public let surname: String
-    public let names: [String]
+    /// issuing country or organization (ISO 3166-1 alpha-3 code with modifications)
+    public let issuingCountryCode: String
+    
+    /// lastname
+    public let lastname: String
+    
+    /// name, firstName + ...
+    public let name: String
+    
+    /// passport number
     public let passportNumber: String
     
+    /// nationality (ISO 3166-1 alpha-3 code with modifications)
     public let nationalityCode: String
-    public let dayOfBirth: NSDate?
-    public let sex: Sex
+    
+    /// date of birth
+    public let dateOfBirth: NSDate?
+    
+    /// gender
+    public let gender: Gender
+    
+    /// expiration date of passport
     public let expiralDate: NSDate?
+    
+    /// personal number (may be used by the issuing country as it desires)
     public let personalNumber: String
     
-//    let checkDigit1: Int
-//    let checkDigit2: Int
-//    let checkDigit3: Int
-//    let checkDigit4: Int
+    /// check digits
+    public let checkDigits: [String]
     
-    public init?(recognizedText text: String) {
+    private static let bundle = PodAsset.bundleForPod("DocumentsOCR")
+    private static let passportPattern: String! = Utils.stringFromTxtFile("passportPattern", inBundle: bundle)
+    
+    init?(recognizedText text: String) {
         
         var regex: NSRegularExpression!
         
@@ -42,7 +59,7 @@ public struct PassportInfo {
             regex = try NSRegularExpression(pattern: PassportInfo.passportPattern, options: [])
         }
         catch {
-            print("error pattern")
+            NSLog("error pattern")
             return nil
         }
         
@@ -50,30 +67,38 @@ public struct PassportInfo {
         if let result = regex.firstMatchInString(text, options: [], range: range) {
             NSLog("\(result.components)")
             
-            countryCode = result.group(atIndex: 4, fromSource: text)
-            surname = result.group(atIndex: 6, fromSource: text)
-            names = result.group(atIndex: 7, fromSource: text).componentsSeparatedByString("<")
+            issuingCountryCode = result.group(atIndex: 4, fromSource: text)
+            lastname = result.group(atIndex: 6, fromSource: text)
+            name = result.group(atIndex: 7, fromSource: text).stringByReplacingOccurrencesOfString("<", withString: " ")
             passportNumber = result.group(atIndex: 9, fromSource: text)
             nationalityCode = result.group(atIndex: 11, fromSource: text)
             
             let dayOfBirthCode = result.group(atIndex: 12, fromSource: text)
-            dayOfBirth = NSDate.dateFromPassportDateCode(dayOfBirthCode)
+            dateOfBirth = NSDate.dateFromPassportDateCode("19" + dayOfBirthCode)
             
-            let sexLetter = result.group(atIndex: 17, fromSource: text)
-            switch sexLetter {
+            let genderLetter = result.group(atIndex: 17, fromSource: text)
+            switch genderLetter {
             case "F":
-                sex = .Female
+                gender = .Female
             case "M":
-                sex = .Male
+                gender = .Male
             default:
-                NSLog("Error: unknown sex \(sexLetter)")
-                sex = .Unknown
+                NSLog("Error: unknown sex \(genderLetter)")
+                gender = .Unknown
             }
             
             let expiralDateCode = result.group(atIndex: 18, fromSource: text)
-            expiralDate = NSDate.dateFromPassportDateCode(expiralDateCode)
+            expiralDate = NSDate.dateFromPassportDateCode("20" + expiralDateCode)
             
             personalNumber = result.group(atIndex: 23, fromSource: text)
+            
+            checkDigits = [
+                result.group(atIndex: 10, fromSource: text),
+                result.group(atIndex: 16, fromSource: text),
+                result.group(atIndex: 22, fromSource: text),
+                result.group(atIndex: 24, fromSource: text),
+                result.group(atIndex: 25, fromSource: text),
+            ]
         }
         else {
             NSLog("Error: no match result")
@@ -81,7 +106,7 @@ public struct PassportInfo {
         }
     }
     
-    public init?(image: UIImage, tesseractDelegate: G8TesseractDelegate?) {
+    init?(image: UIImage, tesseractDelegate: G8TesseractDelegate?) {
         let tesseract = G8Tesseract(language: "eng")
         
         if tesseractDelegate != nil {
@@ -89,22 +114,24 @@ public struct PassportInfo {
         }
         
         tesseract.image = image
+        
         var whiteList = Constants.alphabet.uppercaseString
         whiteList.appendContentsOf("<>1234567890")
         tesseract.charWhitelist = whiteList
+        
         tesseract.setVariableValue("FALSE", forKey: "x_ht_quality_check")
         
         tesseract.recognize()
         
         if let recognizedText = tesseract.recognizedText {
-            print("RECOGNIZED: \(recognizedText)")
+            NSLog("RECOGNIZED: \(recognizedText)")
             
             let mrCode = recognizedText.stringByReplacingOccurrencesOfString(" ", withString: "")
-            print(mrCode)
+        
             self.init(recognizedText: mrCode)
         }
         else {
-            self.init(recognizedText: "")
+            return nil
         }
     }
 }

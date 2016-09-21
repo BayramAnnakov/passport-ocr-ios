@@ -12,22 +12,29 @@ import PodAsset
 
 public protocol PassportScannerDelegate: G8TesseractDelegate {
     
+    /// called when user press take photo button, contains reference to cropped image from camera shoot
     func willBeginScan(withImage image: UIImage)
-    func didFinishScan(withInfo infoOpt: PassportInfo)
-    func didFailedScan()
+    
+    /// called when scanner finished to recognize machine readable code from camera image and translate it into PassportInfo struct
+    func didFinishScan(withInfo info: PassportInfo)
+    
+    /// called when some error happened
+    func didFailed(error: NSError)
 }
 
 public class PassportScanner: NSObject {
-    public var imagePicker = UIImagePickerController()
+    
+    var imagePicker = UIImagePickerController()
+    
     public var viewController: UIViewController!
     public var delegate: PassportScannerDelegate!
     
     public init(containerVC: UIViewController, withDelegate delegate: PassportScannerDelegate) {
-        
         self.delegate = delegate
         self.viewController = containerVC
     }
     
+    /// 
     public func showCameraViewController() {
         if UIImagePickerController.availableCaptureModesForCameraDevice(.Rear) != nil {
             imagePicker = UIImagePickerController()
@@ -99,7 +106,10 @@ extension PassportScanner: UIImagePickerControllerDelegate, UINavigationControll
                     self.delegate.didFinishScan(withInfo: info)
                 }
                 else {
-                    self.delegate.didFailedScan()
+                    let error = NSError(domain: ErrorDomains.RecognitionFailed, code: 1, userInfo: [
+                        NSLocalizedDescriptionKey : "Scanner unnable recognize passport machine readable code from camera picture"
+                        ])
+                    self.delegate.didFailed(error)
                 }
             }
         }

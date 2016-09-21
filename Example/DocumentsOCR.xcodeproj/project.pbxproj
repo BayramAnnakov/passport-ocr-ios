@@ -13,6 +13,8 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		871A377D1D92D3F40036C098 /* NSDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871A377C1D92D3F40036C098 /* NSDateExtension.swift */; };
+		871A377F1D92D3FF0036C098 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871A377E1D92D3FF0036C098 /* StringExtension.swift */; };
 		87FFBC9D1D8FEE84007535B1 /* PassportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FFBC9A1D8FEE84007535B1 /* PassportViewController.swift */; };
 		87FFBC9E1D8FEE84007535B1 /* CountryCodes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 87FFBC9B1D8FEE84007535B1 /* CountryCodes.txt */; };
 		87FFBC9F1D8FEE84007535B1 /* PassportTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FFBC9C1D8FEE84007535B1 /* PassportTextField.swift */; };
@@ -45,6 +47,8 @@
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		693A83300894BC1363390EA3 /* Pods-DocumentsOCR_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentsOCR_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentsOCR_Tests/Pods-DocumentsOCR_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		6E1C264736A24E74716A0316 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		871A377C1D92D3F40036C098 /* NSDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtension.swift; sourceTree = "<group>"; };
+		871A377E1D92D3FF0036C098 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		87FFBC9A1D8FEE84007535B1 /* PassportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassportViewController.swift; sourceTree = "<group>"; };
 		87FFBC9B1D8FEE84007535B1 /* CountryCodes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CountryCodes.txt; sourceTree = "<group>"; };
 		87FFBC9C1D8FEE84007535B1 /* PassportTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassportTextField.swift; sourceTree = "<group>"; };
@@ -109,12 +113,13 @@
 			isa = PBXGroup;
 			children = (
 				87FFBC9A1D8FEE84007535B1 /* PassportViewController.swift */,
+				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				87FFBC9C1D8FEE84007535B1 /* PassportTextField.swift */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				87FFBC9B1D8FEE84007535B1 /* CountryCodes.txt */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
+				871A377B1D92D3E80036C098 /* Extensions */,
 				87FFBCA71D900F90007535B1 /* tessdata */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 			);
@@ -166,6 +171,15 @@
 				17AB6A97A14F18D47CDCF1EA /* Pods-DocumentsOCR_Tests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		871A377B1D92D3E80036C098 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				871A377C1D92D3F40036C098 /* NSDateExtension.swift */,
+				871A377E1D92D3FF0036C098 /* StringExtension.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -371,7 +385,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				871A377D1D92D3F40036C098 /* NSDateExtension.swift in Sources */,
 				87FFBC9D1D8FEE84007535B1 /* PassportViewController.swift in Sources */,
+				871A377F1D92D3FF0036C098 /* StringExtension.swift in Sources */,
 				87FFBC9F1D8FEE84007535B1 /* PassportTextField.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
@@ -535,10 +551,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 693A83300894BC1363390EA3 /* Pods-DocumentsOCR_Tests.debug.xcconfig */;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -554,10 +567,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 17AB6A97A14F18D47CDCF1EA /* Pods-DocumentsOCR_Tests.release.xcconfig */;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
