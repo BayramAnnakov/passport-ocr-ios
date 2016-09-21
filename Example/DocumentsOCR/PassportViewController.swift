@@ -37,7 +37,7 @@ class PassportViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        scanner = PassportScanner(vc: self, withDelegate: self)
+        scanner = PassportScanner(containerVC: self, withDelegate: self)
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
         self.view.addGestureRecognizer(tapGesture)
@@ -86,10 +86,6 @@ class PassportViewController: UITableViewController {
 }
 
 extension PassportViewController: PassportScannerDelegate {
-
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
-        scanner.startScan(image)
-    }
     
     func willBeginScan(withImage image: UIImage) {
         self.cameraImageView.image = image
