@@ -7,8 +7,8 @@
 
 ## Screenshots 
 
-<img src=http://imgur.com/6r3Sg0v>
-<img src=http://imgur.com/M29KNqB>
+<img src=http://imgur.com/6r3Sg0v.png>
+<img src=http://imgur.com/M29KNqB.png>
 
 ## Example
 
@@ -51,7 +51,7 @@ func willBeginScan(withImage image: UIImage)
 then if image was recognized successfull:
 
 ```swift
-   didFinishScan(withInfo infoOpt: PassportInfo)
+   func didFinishScan(withInfo infoOpt: PassportInfo)
 ```
 
 else 
