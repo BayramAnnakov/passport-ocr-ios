@@ -20,8 +20,12 @@ extension NSDate {
     }
     
     public var stringDate: String {
+        return stringFromDateWithFormat("yyyy-MM-dd")
+    }
+    
+    public func stringFromDateWithFormat(format: String) -> String {
         let formatter = NSDateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
+        formatter.dateFormat = format
         return formatter.stringFromDate(self)
     }
 }

@@ -29,30 +29,3 @@ struct Constants {
         return result
     }
 }
-
-
-
-//
-//let viewControllerSize = viewController.view.frame.size
-//let vcWidth = viewControllerSize.width
-//let vcHeight = viewControllerSize.height
-//
-//let cameraImageWidth = image.size.width
-//let cameraImageHeight = (cameraImageWidth * vcWidth) / vcWidth
-//
-//let vcBorderHeight = cameraOverlayView.codeBorder.frame.size.height
-////let borderHeight = (vcBorderHeight * cameraImageWidth) / vcWidth
-//let borderHeight = CGFloat(500)
-//print("Border height: \(borderHeight)")
-//
-//let cameraImageY = (cameraImageHeight - borderHeight) / 2
-//
-//let rect = CGRectMake(cameraImageY, 0, borderHeight, image.size.width)
-//
-//let cropped = image.croppedImageWithSize(rect)
-//self.receivedImage(cropped)
-//
-//
-
-
-

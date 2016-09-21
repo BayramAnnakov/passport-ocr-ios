@@ -12,10 +12,6 @@ import GPUImage
 
 extension UIImage {
     func croppedImageWithSize(rect: CGRect) -> UIImage {
-//        
-//        let subImage = CGImageCreateWithImageInRect(self.CGImage, rect)
-//        return UIImage(CGImage: subImage!)
-        
         
         let imageRef: CGImageRef! = CGImageCreateWithImageInRect(self.CGImage, rect)
         

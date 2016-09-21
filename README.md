@@ -5,6 +5,11 @@
 [![License](https://img.shields.io/cocoapods/l/DocumentsOCR.svg?style=flat)](http://cocoapods.org/pods/DocumentsOCR)
 [![Platform](https://img.shields.io/cocoapods/p/DocumentsOCR.svg?style=flat)](http://cocoapods.org/pods/DocumentsOCR)
 
+## Screenshots 
+
+<img src=http://imgur.com/6r3Sg0v>
+<img src=http://imgur.com/M29KNqB>
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
@@ -15,15 +20,47 @@ This framework uses [TesseractOCRiOS](https://github.com/gali8/Tesseract-OCR-iOS
 
 ## Installation
 
-DocumentsOCR is [available](https://cocoapods.org/?q=Documents) through [CocoaPods](http://cocoapods.org). To install
+DocumentsOCR is [available](https://cocoapods.org/pods/DocumentsOCR) through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "DocumentsOCR", '~> 0.3.0'
+pod "DocumentsOCR"
 ```
 ## Usage
 
-Implement PassportScanner protocol in your custom class (see extension in Example project).
+1) Create scanner instance with your UIViewController instance reference, which implemets PassportScannerDelegate protocol
+
+```swift
+    scanner = PassportScanner(containerVC: self, withDelegate: self)
+```
+
+2) Scanner instance can show view controller with camera and border
+
+```swift
+    scanner.showCameraViewController()
+```
+
+3) After take shoot button pressed, these delegate methods called: 
+
+func willBeginScan(withImage image: UIImage)
+
+```swift
+    func didFinishScan(withInfo infoOpt: PassportInfo)
+```
+
+then if image was recognized successfull:
+
+```swift
+   didFinishScan(withInfo infoOpt: PassportInfo)
+```
+
+else 
+
+```swift
+    func didFailedScan()
+```
+
+
 
 ## Author
 
@@ -35,8 +72,9 @@ DocumentsOCR is available under the MIT license. See the LICENSE file for more i
 
 ### TODO
 
-- [ ] fix minor UI defects in example 
-- [ ] code refactoring
-- [ ] pod string for all versions (without using ~> version")
+- [x] fix minor UI defects in example 
+- [x] code refactoring
+- [x] pod string for all versions (without using ~> version")
 - [ ] check visa document recognitions
-- [ ] unit tests
+- [ ] unit tests for camera shoots
+- [ ] take many pictures when press take shoot button, then choose best image for recognition

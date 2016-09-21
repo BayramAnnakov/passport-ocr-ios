@@ -10,16 +10,23 @@ import UIKit
 import TesseractOCR
 import PodAsset
 
-public protocol PassportScanner: UINavigationControllerDelegate, UIImagePickerControllerDelegate, G8TesseractDelegate
-{
-    var imagePicker: UIImagePickerController { set get }
-    var viewController: UIViewController { get }
+public protocol PassportScannerDelegate: G8TesseractDelegate {
     
-    func receivedImage(image: UIImage)
-    func receivedInfo(infoOpt: PassportInfo?)
+    func willBeginScan(withImage image: UIImage)
+    func didFinishScan(withInfo infoOpt: PassportInfo)
+    func didFailedScan()
 }
 
-extension PassportScanner {
+public class PassportScanner: NSObject {
+    public var imagePicker = UIImagePickerController()
+    public var viewController: UIViewController!
+    public var delegate: PassportScannerDelegate!
+    
+    public init(containerVC: UIViewController, withDelegate delegate: PassportScannerDelegate) {
+        
+        self.delegate = delegate
+        self.viewController = containerVC
+    }
     
     public func showCameraViewController() {
         if UIImagePickerController.availableCaptureModesForCameraDevice(.Rear) != nil {
@@ -52,23 +59,17 @@ extension PassportScanner {
             viewController.showErrorAlert(withMessage: "Камера не найдена")
         }
     }
+    
+    private var cameraOverlayView: CameraOverlayView {
+        let bundle = PodAsset.bundleForPod("DocumentsOCR")
+        let cameraVC = CameraOverlayViewController(nibName: NibNames.cameraOverlayViewController, bundle: bundle!)
+        let overlayView = cameraVC.view as! CameraOverlayView
+        return overlayView
+    }
+}
 
-    public func didFinishingPickingImage(image: UIImage) {
-        
-        NSLog("\(image.size)")
-        
-        // Magic numbers. Work for iphone 6 screen
-        
-        //let borderHeight = CGFloat(500)
-        
-//        let size1 = viewController.view.frame.size
-//        let size2 = image.size
-//        let w1 = size1.width
-//        let w2 = size2.width
-//        let h1 = size1.height
-//        let h2 = (w2 * h1) / w1
-//        let y = (h2 - borderHeight) / 2
-//        let rect = CGRectMake(y, 0, borderHeight, image.size.width)
+extension PassportScanner: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    public func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
         
         
         let viewControllerSize = viewController.view.frame.size
@@ -80,38 +81,28 @@ extension PassportScanner {
         
         let vcBorderHeight = cameraOverlayView.codeBorder.frame.size.height
         let borderHeight = (vcBorderHeight * cameraImageWidth) / vcWidth
-       
-        print("Border height: \(borderHeight)")
         
         let cameraImageY = (cameraImageHeight - borderHeight) / 2
         
         let rect = CGRectMake(cameraImageY, 0, borderHeight, image.size.width)
-        
         let cropped = image.croppedImageWithSize(rect)
-        self.receivedImage(cropped)
-    
-        print("Cropped: \(cropped.size)")
-        
-        self.receivedImage(cropped)
         
         viewController.dismissViewControllerAnimated(true, completion: nil)
         
-        //        let progressView = MRProgressOverlayView.showOverlayAddedTo(self.view.window, title: "Сканирование", mode: .Indeterminate, animated: true)
+        delegate.willBeginScan(withImage: cropped)
         
         NSOperationQueue().addOperationWithBlock {
-            let info = PassportInfo(image: cropped, sender: self)
+            let infoOpt = PassportInfo(image: cropped, tesseractDelegate: self.delegate)
+            
             dispatch_async(dispatch_get_main_queue()) {
-                //progressView.dismiss(true)
-                self.receivedInfo(info)
+                if let info = infoOpt {
+                    self.delegate.didFinishScan(withInfo: info)
+                }
+                else {
+                    self.delegate.didFailedScan()
+                }
             }
         }
-    }
-    
-    private var cameraOverlayView: CameraOverlayView {
-        let bundle = PodAsset.bundleForPod("DocumentsOCR")
-        let cameraVC = CameraOverlayViewController(nibName: NibNames.cameraOverlayViewController, bundle: bundle!)
-        let overlayView = cameraVC.view as! CameraOverlayView
-        return overlayView
     }
 }
 

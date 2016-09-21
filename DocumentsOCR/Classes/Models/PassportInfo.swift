@@ -34,9 +34,7 @@ public struct PassportInfo {
 //    let checkDigit3: Int
 //    let checkDigit4: Int
     
-    
-    
-    public init?(machineReadableCode code: String) {
+    public init?(recognizedText text: String) {
         
         var regex: NSRegularExpression!
         
@@ -48,20 +46,20 @@ public struct PassportInfo {
             return nil
         }
         
-        let range = NSRange(location: 0, length: code.characters.count)
-        if let result = regex.firstMatchInString(code, options: [], range: range) {
+        let range = NSRange(location: 0, length: text.characters.count)
+        if let result = regex.firstMatchInString(text, options: [], range: range) {
             NSLog("\(result.components)")
             
-            countryCode = result.group(atIndex: 4, fromSource: code)
-            surname = result.group(atIndex: 6, fromSource: code)
-            names = result.group(atIndex: 7, fromSource: code).componentsSeparatedByString("<")
-            passportNumber = result.group(atIndex: 9, fromSource: code)
-            nationalityCode = result.group(atIndex: 11, fromSource: code)
+            countryCode = result.group(atIndex: 4, fromSource: text)
+            surname = result.group(atIndex: 6, fromSource: text)
+            names = result.group(atIndex: 7, fromSource: text).componentsSeparatedByString("<")
+            passportNumber = result.group(atIndex: 9, fromSource: text)
+            nationalityCode = result.group(atIndex: 11, fromSource: text)
             
-            let dayOfBirthCode = result.group(atIndex: 12, fromSource: code)
+            let dayOfBirthCode = result.group(atIndex: 12, fromSource: text)
             dayOfBirth = NSDate.dateFromPassportDateCode(dayOfBirthCode)
             
-            let sexLetter = result.group(atIndex: 17, fromSource: code)
+            let sexLetter = result.group(atIndex: 17, fromSource: text)
             switch sexLetter {
             case "F":
                 sex = .Female
@@ -72,10 +70,10 @@ public struct PassportInfo {
                 sex = .Unknown
             }
             
-            let expiralDateCode = result.group(atIndex: 18, fromSource: code)
+            let expiralDateCode = result.group(atIndex: 18, fromSource: text)
             expiralDate = NSDate.dateFromPassportDateCode(expiralDateCode)
             
-            personalNumber = result.group(atIndex: 23, fromSource: code)
+            personalNumber = result.group(atIndex: 23, fromSource: text)
         }
         else {
             NSLog("Error: no match result")
@@ -83,29 +81,30 @@ public struct PassportInfo {
         }
     }
     
-    public init?(image: UIImage, sender: G8TesseractDelegate?) {
+    public init?(image: UIImage, tesseractDelegate: G8TesseractDelegate?) {
         let tesseract = G8Tesseract(language: "eng")
         
-        if sender != nil {
-            tesseract.delegate = sender!
+        if tesseractDelegate != nil {
+            tesseract.delegate = tesseractDelegate!
         }
         
         tesseract.image = image
         var whiteList = Constants.alphabet.uppercaseString
         whiteList.appendContentsOf("<>1234567890")
         tesseract.charWhitelist = whiteList
+        tesseract.setVariableValue("FALSE", forKey: "x_ht_quality_check")
         
         tesseract.recognize()
         
         if let recognizedText = tesseract.recognizedText {
             print("RECOGNIZED: \(recognizedText)")
             
-            let mrCode = tesseract.recognizedText.stringByReplacingOccurrencesOfString(" ", withString: "")
+            let mrCode = recognizedText.stringByReplacingOccurrencesOfString(" ", withString: "")
             print(mrCode)
-            self.init(machineReadableCode: mrCode)
+            self.init(recognizedText: mrCode)
         }
         else {
-            self.init(machineReadableCode: "")
+            self.init(recognizedText: "")
         }
     }
 }
