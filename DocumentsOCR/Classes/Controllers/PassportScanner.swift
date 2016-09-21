@@ -10,15 +10,16 @@ import UIKit
 import TesseractOCR
 import PodAsset
 
+/// The delegate of a PassportScanenr object must adopt the PassportScanner protocol. Methods of protocol allow use result of passport machine readable code recognition, handle errors if something went wrong. In addition, this protocol inherit G8TesseractDelegate protocol, so you can handle progress of image recognition (optional).
 public protocol PassportScannerDelegate: G8TesseractDelegate {
     
-    /// called when user press take photo button, contains reference to cropped image from camera shoot
+    /// Tells the delegate that user press take photo button, contains reference to cropped image from camera shoot
     func willBeginScan(withImage image: UIImage)
     
-    /// called when scanner finished to recognize machine readable code from camera image and translate it into PassportInfo struct
+    /// Tells the delegate that scanner finished to recognize machine readable code from camera image and translate it into PassportInfo struct
     func didFinishScan(withInfo info: PassportInfo)
     
-    /// called when some error happened
+    /// Tells the delegate that some error happened
     func didFailed(error: NSError)
 }
 
@@ -26,16 +27,30 @@ public class PassportScanner: NSObject {
     
     var imagePicker = UIImagePickerController()
     
+    /// View controller, which will present camera image picker for passport code
     public var viewController: UIViewController!
+    
+    /// The object that acts as the delegate of the passport scanner
     public var delegate: PassportScannerDelegate!
     
+    /**
+     Initializes and returns a new passport scanner with the provided container view controller and delegate
+     
+     - Parameters:
+     - containerVC: View controller, which will present camera image picker for passport code
+     - delegate: The object that acts as the delegate of the passport scanner
+     
+     - Returns: ready-to-use passport scanner instance
+     */
+
     public init(containerVC: UIViewController, withDelegate delegate: PassportScannerDelegate) {
         self.delegate = delegate
         self.viewController = containerVC
     }
     
-    /// 
-    public func showCameraViewController() {
+    /// Present view controller with camera and border for passport code
+    
+    public func presentCameraViewController() {
         if UIImagePickerController.availableCaptureModesForCameraDevice(.Rear) != nil {
             imagePicker = UIImagePickerController()
             imagePicker.allowsEditing = false
@@ -76,26 +91,12 @@ public class PassportScanner: NSObject {
 }
 
 extension PassportScanner: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
     public func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
-        
-        
-        let viewControllerSize = viewController.view.frame.size
-        let vcWidth = viewControllerSize.width
-        let vcHeight = viewControllerSize.height
-        
-        let cameraImageWidth = image.size.width
-        let cameraImageHeight = (cameraImageWidth * vcHeight) / vcWidth
-        
-        let vcBorderHeight = cameraOverlayView.codeBorder.frame.size.height
-        let borderHeight = (vcBorderHeight * cameraImageWidth) / vcWidth
-        
-        let cameraImageY = (cameraImageHeight - borderHeight) / 2
-        
-        let rect = CGRectMake(cameraImageY, 0, borderHeight, image.size.width)
-        let cropped = image.croppedImageWithSize(rect)
         
         viewController.dismissViewControllerAnimated(true, completion: nil)
         
+        let cropped = cropImage(image)
         delegate.willBeginScan(withImage: cropped)
         
         NSOperationQueue().addOperationWithBlock {
@@ -113,6 +114,23 @@ extension PassportScanner: UIImagePickerControllerDelegate, UINavigationControll
                 }
             }
         }
+    }
+    
+    private func cropImage(image: UIImage) -> UIImage {
+        let viewControllerSize = viewController.view.frame.size
+        let vcWidth = viewControllerSize.width
+        let vcHeight = viewControllerSize.height
+        
+        let cameraImageWidth = image.size.width
+        let cameraImageHeight = (cameraImageWidth * vcHeight) / vcWidth
+        
+        let vcBorderHeight = cameraOverlayView.codeBorder.frame.size.height
+        let borderHeight = (vcBorderHeight * cameraImageWidth) / vcWidth
+        
+        let cameraImageY = (cameraImageHeight - borderHeight) / 2
+        
+        let rect = CGRectMake(cameraImageY, 0, borderHeight, image.size.width)
+        return image.croppedImageWithSize(rect)
     }
 }
 

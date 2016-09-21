@@ -77,7 +77,7 @@ class PassportViewController: UITableViewController {
     }
     
     @IBAction func cameraClicked(sender: UIBarButtonItem) {
-        scanner.showCameraViewController()
+        scanner.presentCameraViewController()
     }
     
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
@@ -113,7 +113,7 @@ extension PassportViewController: PassportScannerDelegate {
             }
         }()
         sexField.text = sex
-        expiredDateField.text = info.expiralDate?.stringDate
+        expiredDateField.text = info.expirationDate?.stringDate
         personalNumberField.text = info.personalNumber
     }
     

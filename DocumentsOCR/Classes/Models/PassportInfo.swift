@@ -40,7 +40,7 @@ public struct PassportInfo {
     public let gender: Gender
     
     /// expiration date of passport
-    public let expiralDate: NSDate?
+    public let expirationDate: NSDate?
     
     /// personal number (may be used by the issuing country as it desires)
     public let personalNumber: String
@@ -88,7 +88,7 @@ public struct PassportInfo {
             }
             
             let expiralDateCode = result.group(atIndex: 18, fromSource: text)
-            expiralDate = NSDate.dateFromPassportDateCode("20" + expiralDateCode)
+            expirationDate = NSDate.dateFromPassportDateCode("20" + expiralDateCode)
             
             personalNumber = result.group(atIndex: 23, fromSource: text)
             

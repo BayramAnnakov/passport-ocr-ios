@@ -41,22 +41,20 @@ pod "DocumentsOCR"
 
 3) After take shoot button pressed, these delegate methods called: 
 
-func willBeginScan(withImage image: UIImage)
-
 ```swift
-    func didFinishScan(withInfo infoOpt: PassportInfo)
+    func willBeginScan(withImage image: UIImage)
 ```
 
 then if image was recognized successfull:
 
 ```swift
-   func didFinishScan(withInfo infoOpt: PassportInfo)
+   func didFinishScan(withInfo info: PassportInfo)
 ```
 
-else 
+if some error happened
 
 ```swift
-    func didFailedScan()
+    func didFailed(error: NSError)
 ```
 
 
@@ -71,10 +69,11 @@ DocumentsOCR is available under the MIT license. See the LICENSE file for more i
 
 ### TODO
 
+- [x] documentation
 - [ ] small screenshots
 - [x] fix minor UI defects in example 
 - [x] code refactoring
 - [x] pod string for all versions (without using ~> version")
 - [ ] check visa document recognitions
 - [ ] unit tests for camera shoots
-- [ ] take many pictures when press take shoot button, then choose best image for recognition
+- [ ] take many pictures when "take shoot" button pressed, then choose best image for recognition
