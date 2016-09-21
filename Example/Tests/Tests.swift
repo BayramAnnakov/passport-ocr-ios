@@ -19,8 +19,8 @@ class PassportOCRTests: XCTestCase {
         super.tearDown()
     }
     
-    func testMrCode(mrCode: String) {
-        let info = PassportInfo(machineReadableCode: mrCode)
+    func testMrCode(text: String) {
+        let info = PassportInfo(recognizedText: text)
         XCTAssert(info != nil)
         if info != nil {
             print(info!)
@@ -48,7 +48,7 @@ class PassportOCRTests: XCTestCase {
     }
     
     func testImageWithName(imageName: String) {
-        let info = PassportInfo(image: UIImage(named: imageName)!, sender: nil)
+        let info = PassportInfo(image: UIImage(named: imageName)!, tesseractDelegate: nil)
         XCTAssert(info != nil)
     }
     

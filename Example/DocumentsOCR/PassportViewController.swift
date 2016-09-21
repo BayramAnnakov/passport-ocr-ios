@@ -12,7 +12,8 @@ import DocumentsOCR
 
 class PassportViewController: UITableViewController {
 
-    var _imagePicker: UIImagePickerController!
+    var scanner: PassportScanner!
+    
     var selectedTextField: PassportTextField!
     
     @IBOutlet weak var countryField: PassportTextField!
@@ -35,6 +36,8 @@ class PassportViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        scanner = PassportScanner(vc: self, withDelegate: self)
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
         self.view.addGestureRecognizer(tapGesture)
@@ -74,7 +77,7 @@ class PassportViewController: UITableViewController {
     }
     
     @IBAction func cameraClicked(sender: UIBarButtonItem) {
-        self.showCameraViewController()
+        scanner.showCameraViewController()
     }
     
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
@@ -82,58 +85,50 @@ class PassportViewController: UITableViewController {
     }
 }
 
-extension PassportViewController: PassportScanner {
+extension PassportViewController: PassportScannerDelegate {
 
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
-        self.didFinishingPickingImage(image)
+        scanner.startScan(image)
     }
     
-    var viewController: UIViewController {
-        return self
-    }
-
-    var imagePicker: UIImagePickerController {
-        set {
-            _imagePicker = newValue
-        }
-        get {
-            return _imagePicker
-        }
-    }
-    
-    func receivedImage(image: UIImage) {
+    func willBeginScan(withImage image: UIImage) {
         self.cameraImageView.image = image
     }
     
-    func receivedInfo(infoOpt: PassportInfo?) {
-        if let info = infoOpt {
-            NSLog("Info: \(info)")
-            
-            countryField.text = info.countryCode
-            surnameField.text = info.surname
-            nameField.text = String(info.names)
-            numberField.text = info.passportNumber
-            nationalityField.text = info.nationalityCode
-            dobField.text = info.dayOfBirth?.stringDate
-            let sex: String = {
-                switch info.sex {
-                case .Female:
-                    return "Женщина"
-                case .Male:
-                    return "Мужчина"
-                default:
-                    return "?"
-                }
-            }()
-            sexField.text = sex
-            expiredDateField.text = info.expiralDate?.stringDate
-            personalNumberField.text = info.personalNumber
+    func didFinishScan(withInfo info: PassportInfo) {
+        NSLog("Info: \(info)")
+        
+        countryField.text = info.countryCode
+        surnameField.text = info.surname
+        var namesText = ""
+        for name in info.names {
+            if name != "" {
+                namesText.appendContentsOf(name + " ")
+            }
         }
-        else {
-            NSLog("Ошибка")
-            self.showErrorAlert(withMessage: "Произошла ошибка распознования")
-        }
-
+        
+        nameField.text = namesText
+        numberField.text = info.passportNumber
+        nationalityField.text = info.nationalityCode
+        dobField.text = info.dayOfBirth?.stringDate
+        let sex: String = {
+            switch info.sex {
+            case .Female:
+                return "Женщина"
+            case .Male:
+                return "Мужчина"
+            default:
+                return "?"
+            }
+        }()
+        sexField.text = sex
+        expiredDateField.text = info.expiralDate?.stringDate
+        personalNumberField.text = info.personalNumber
+    }
+    
+    func didFailedScan() {
+        NSLog("Ошибка")
+        self.showErrorAlert(withMessage: "Произошла ошибка распознования")
     }
 }
 
