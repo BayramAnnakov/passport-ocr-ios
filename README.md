@@ -7,8 +7,7 @@
 
 ## Screenshots 
 
-<img src=http://imgur.com/6r3Sg0v.png>
-<img src=http://imgur.com/M29KNqB.png>
+todo
 
 ## Example
 
@@ -72,6 +71,7 @@ DocumentsOCR is available under the MIT license. See the LICENSE file for more i
 
 ### TODO
 
+- [ ] small screenshots
 - [x] fix minor UI defects in example 
 - [x] code refactoring
 - [x] pod string for all versions (without using ~> version")
