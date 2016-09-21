@@ -29,8 +29,15 @@ class PassportViewController: UITableViewController {
     
     let countries = Utils.stringFromTxtFile("CountryCodes")!.componentsSeparatedByString("\n")
     
+    func dismissKeyboard() {
+        self.view.endEditing(true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        self.view.addGestureRecognizer(tapGesture)
         
         self.cameraImageView.contentMode = .ScaleAspectFit
         
@@ -80,6 +87,7 @@ extension PassportViewController: PassportScanner {
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
         self.didFinishingPickingImage(image)
     }
+    
     var viewController: UIViewController {
         return self
     }
@@ -142,7 +150,7 @@ extension PassportViewController: UITextFieldDelegate {
         return true
     }
     
-    // TODO: create mask for text fields
+    // TODO: create mask for text fields?
     
 //    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
 //        guard let field = textField as? PassportTextField else {

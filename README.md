@@ -11,7 +11,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Requirements
 
-To use this framework, add [tessdata/eng.traineddata] to your app repository. 
+This framework uses [TesseractOCRiOS](https://github.com/gali8/Tesseract-OCR-iOS) for text recognition of machine readable codes. To use DocumentsOCR, add tessdata/eng.traineddata to your app repository. 
 
 ## Installation
 
@@ -19,8 +19,12 @@ DocumentsOCR is [available](https://cocoapods.org/?q=Documents) through [CocoaPo
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "DocumentsOCR", '~> 0.2.0'
+pod "DocumentsOCR", '~> 0.3.0'
 ```
+## Usage
+
+Implement PassportScanner protocol in your custom class (see extension in Example project).
+
 ## Author
 
 Michael, mmbabaev@gmail.com

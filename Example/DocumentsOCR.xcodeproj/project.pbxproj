@@ -108,14 +108,14 @@
 		607FACD21AFB9204008FA782 /* Example for DocumentsOCR */ = {
 			isa = PBXGroup;
 			children = (
-				87FFBCA71D900F90007535B1 /* tessdata */,
 				87FFBC9A1D8FEE84007535B1 /* PassportViewController.swift */,
-				87FFBC9B1D8FEE84007535B1 /* CountryCodes.txt */,
 				87FFBC9C1D8FEE84007535B1 /* PassportTextField.swift */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
+				87FFBC9B1D8FEE84007535B1 /* CountryCodes.txt */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
+				87FFBCA71D900F90007535B1 /* tessdata */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 			);
 			name = "Example for DocumentsOCR";
