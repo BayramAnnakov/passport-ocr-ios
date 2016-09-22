@@ -13,7 +13,7 @@ import GPUImage
 extension UIImage {
     func croppedImageWithSize(rect: CGRect) -> UIImage {
         
-        let imageRef: CGImageRef! = CGImageCreateWithImageInRect(self.CGImage, rect)
+        let imageRef: CGImageRef! = CGImageCreateWithImageInRect(self.CGImage!, rect)
         
         let croppedImage: UIImage = UIImage(CGImage: imageRef, scale: self.scale, orientation: self.imageOrientation)
         

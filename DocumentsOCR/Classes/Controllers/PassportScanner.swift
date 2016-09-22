@@ -97,6 +97,9 @@ extension PassportScanner: UIImagePickerControllerDelegate, UINavigationControll
         viewController.dismissViewControllerAnimated(true, completion: nil)
         
         let cropped = cropImage(image)
+        
+        viewController.dismissViewControllerAnimated(true, completion: nil)
+        
         delegate.willBeginScan(withImage: cropped)
         
         NSOperationQueue().addOperationWithBlock {
@@ -117,6 +120,10 @@ extension PassportScanner: UIImagePickerControllerDelegate, UINavigationControll
     }
     
     private func cropImage(image: UIImage) -> UIImage {
+        NSLog("image size: \(image.size)")
+        NSLog("vc size: \(viewController.view.frame.size)")
+        NSLog("border size: \(cameraOverlayView.codeBorder.frame.size)")
+        
         let viewControllerSize = viewController.view.frame.size
         let vcWidth = viewControllerSize.width
         let vcHeight = viewControllerSize.height
@@ -124,12 +131,15 @@ extension PassportScanner: UIImagePickerControllerDelegate, UINavigationControll
         let cameraImageWidth = image.size.width
         let cameraImageHeight = (cameraImageWidth * vcHeight) / vcWidth
         
-        let vcBorderHeight = cameraOverlayView.codeBorder.frame.size.height
+        let vcBorderHeight = cameraOverlayView.codeBorder.frame.height
+        //let vcBorderHeight = CGFloat(90)
         let borderHeight = (vcBorderHeight * cameraImageWidth) / vcWidth
         
         let cameraImageY = (cameraImageHeight - borderHeight) / 2
         
         let rect = CGRectMake(cameraImageY, 0, borderHeight, image.size.width)
+        //let rect = CGRectMake(300, 0, 500, image.size.width)
+
         return image.croppedImageWithSize(rect)
     }
 }
