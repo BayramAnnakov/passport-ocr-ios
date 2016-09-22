@@ -31,7 +31,8 @@ Pod::Spec.new do |s|
   
   s.resource_bundles = {
   	'DocumentsOCR' => ['DocumentsOCR/Assets/CameraOverlayViewController.xib',
-  						  'DocumentsOCR/Assets/passportPattern.txt']
+  						  'DocumentsOCR/Assets/passportPattern.txt',
+                        'DocumentsOCR/Assets/*.png']
   }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'

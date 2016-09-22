@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CameraOverlayViewController" customModule="DocumentsOCR" customModuleProvider="target">
@@ -16,37 +17,40 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cm0-0M-N08">
-                    <rect key="frame" x="141" y="629" width="93" height="30"/>
-                    <state key="normal" title="Сканировать"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cm0-0M-N08">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="80" id="aCM-RW-jv8"/>
+                    </constraints>
+                    <state key="normal" title="Сканировать" image="circle.png"/>
                     <connections>
                         <action selector="scanButtonClicked:" destination="i5M-Pr-FkT" eventType="touchUpInside" id="NUI-Gr-3fQ"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sft-Iw-wJR">
-                    <rect key="frame" x="8" y="629" width="56" height="30"/>
-                    <state key="normal" title="Отмена"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aq8-eL-xhw">
+                    <color key="backgroundColor" red="0.65969551282051275" green="0.18069087995348332" blue="0.19548233647129598" alpha="0.37365301724137934" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sft-Iw-wJR">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="Szp-fu-cZR"/>
+                        <constraint firstAttribute="width" constant="60" id="foj-X3-aXh"/>
+                    </constraints>
+                    <state key="normal" title="Отмена" image="cancel.png"/>
                     <connections>
                         <action selector="cancelButtonClicked:" destination="i5M-Pr-FkT" eventType="touchUpInside" id="jqt-cM-rbJ"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aq8-eL-xhw">
-                    <rect key="frame" x="0.0" y="289" width="375" height="90"/>
-                    <color key="backgroundColor" red="0.65969551282051275" green="0.18069087995348332" blue="0.19548233647129598" alpha="0.37365301724137934" colorSpace="calibratedRGB"/>
-                </view>
             </subviews>
             <constraints>
-                <constraint firstItem="Sft-Iw-wJR" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottomMargin" id="0J3-Ty-Ypn"/>
-                <constraint firstItem="Sft-Iw-wJR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="1kF-6f-aKO"/>
-                <constraint firstItem="aq8-eL-xhw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Oj9-mm-mT9"/>
-                <constraint firstItem="aq8-eL-xhw" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="UFs-no-bkl"/>
-                <constraint firstItem="aq8-eL-xhw" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="289" id="aNM-UJ-3tE"/>
-                <constraint firstItem="Sft-Iw-wJR" firstAttribute="baseline" secondItem="cm0-0M-N08" secondAttribute="baseline" id="huc-UU-TyG"/>
-                <constraint firstItem="aq8-eL-xhw" firstAttribute="centerX" secondItem="cm0-0M-N08" secondAttribute="centerX" id="iGK-m8-6Yn"/>
-                <constraint firstAttribute="trailing" secondItem="aq8-eL-xhw" secondAttribute="trailing" id="s0b-dH-s1B"/>
+                <constraint firstItem="cm0-0M-N08" firstAttribute="leading" secondItem="Sft-Iw-wJR" secondAttribute="trailing" constant="71" id="BTj-C4-Oby"/>
+                <constraint firstItem="aq8-eL-xhw" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="O53-Ie-k6h"/>
+                <constraint firstItem="aq8-eL-xhw" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="289" id="Rt6-62-fdn"/>
+                <constraint firstItem="Sft-Iw-wJR" firstAttribute="bottom" secondItem="cm0-0M-N08" secondAttribute="bottom" id="VY1-wX-MDg"/>
+                <constraint firstItem="Sft-Iw-wJR" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottomMargin" id="WYd-AA-oBn"/>
+                <constraint firstItem="aq8-eL-xhw" firstAttribute="centerX" secondItem="cm0-0M-N08" secondAttribute="centerX" id="iRW-2f-1x9"/>
+                <constraint firstAttribute="trailing" secondItem="aq8-eL-xhw" secondAttribute="trailing" id="oge-vk-j5Y"/>
+                <constraint firstItem="Sft-Iw-wJR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="x0S-sn-eOV"/>
+                <constraint firstItem="aq8-eL-xhw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="z2A-KL-xKa"/>
             </constraints>
-            <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
             <userDefinedRuntimeAttributes>
                 <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                     <real key="value" value="85"/>
@@ -58,4 +62,8 @@
             <point key="canvasLocation" x="421.5" y="462.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="cancel.png" width="52" height="52"/>
+        <image name="circle.png" width="256" height="256"/>
+    </resources>
 </document>
