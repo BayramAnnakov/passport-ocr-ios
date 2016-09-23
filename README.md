@@ -7,7 +7,7 @@
 
 ## Screenshots 
 
-![CameraOverlayView](http://s21.postimg.org/72rx8qx5j/XTk3_O3_Vt9_QM.jpg)
+![CameraOverlayView](http://www.dol.wa.gov/cdlchanges/images/valid-us-passport.jpg)
 
 ## Example
 
