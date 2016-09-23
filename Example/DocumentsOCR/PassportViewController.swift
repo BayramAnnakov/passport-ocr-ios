@@ -88,13 +88,13 @@ class PassportViewController: UITableViewController {
     }
 }
 
-extension PassportViewController: PassportScannerDelegate {
+extension PassportViewController: DocumentScannerDelegate {
     
-    func willBeginScan(withImage image: UIImage) {
+    func willBeginScanImage(image: UIImage) {
         self.cameraImageView.image = image
     }
     
-    func didFinishScan(withInfo info: DocumentInfo) {
+    func didFinishScanWithInfo(info: DocumentInfo) {
         NSLog("Info: \(info)")
         
         countryField.text = info.issuingCountryCode
@@ -121,7 +121,7 @@ extension PassportViewController: PassportScannerDelegate {
     }
     
     
-    func didFailed(error: NSError) {
+    func didFailedWithError(error: NSError) {
         NSLog("Ошибка \(error.localizedDescription)")
         self.showErrorAlert(withMessage: error.localizedDescription)
     }

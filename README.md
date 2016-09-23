@@ -27,10 +27,10 @@ pod "DocumentsOCR"
 ```
 ## Usage
 
-1) Create scanner instance with your UIViewController instance reference, which implemets PassportScannerDelegate protocol
+1) Create scanner instance with your UIViewController instance reference, which implemets DocumentScannerDelegate protocol
 
 ```swift
-    scanner = PassportScanner(containerVC: self, withDelegate: self)
+    scanner = DocumentScanner(containerVC: self, withDelegate: self)
 ```
 
 2) Scanner instance can show view controller with camera and border

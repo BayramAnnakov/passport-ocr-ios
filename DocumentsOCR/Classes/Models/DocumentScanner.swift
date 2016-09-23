@@ -1,5 +1,5 @@
 //
-//  PassportScannerViewController.swift
+//  DocumentScannerViewController.swift
 //  Pods
 //
 //  Created by Михаил on 19.09.16.
@@ -10,17 +10,17 @@ import UIKit
 import TesseractOCR
 import PodAsset
 
-/// The delegate of a PassportScanenr object must adopt the PassportScanner protocol. Methods of protocol allow use result of passport machine readable code recognition, handle errors if something went wrong. In addition, this protocol inherit G8TesseractDelegate protocol, so you can handle progress of image recognition (optional).
-public protocol PassportScannerDelegate: G8TesseractDelegate {
+/// The delegate of a DocumentScaner object must adopt the DocumentScannerDelegate protocol. Methods of protocol allow use result of passport machine readable code recognition, handle errors if something went wrong. In addition, this protocol inherit G8TesseractDelegate protocol, so you can handle progress of image recognition (optional).
+public protocol DocumentScannerDelegate: G8TesseractDelegate {
     
     /// Tells the delegate that user press take photo button, contains reference to cropped image from camera shoot
-    func willBeginScan(withImage image: UIImage)
+    func willBeginScanImage(image: UIImage)
     
     /// Tells the delegate that scanner finished to recognize machine readable code from camera image and translate it into PassportInfo struct
-    func didFinishScan(withInfo info: DocumentInfo)
+    func didFinishScanWithInfo(info: DocumentInfo)
     
     /// Tells the delegate that some error happened
-    func didFailed(error: NSError)
+    func didFailedWithError(error: NSError)
 }
 
 public class DocumentScanner: NSObject {
@@ -31,7 +31,7 @@ public class DocumentScanner: NSObject {
     public var viewController: UIViewController!
     
     /// The object that acts as the delegate of the passport scanner
-    public var delegate: PassportScannerDelegate!
+    public var delegate: DocumentScannerDelegate!
     
     /**
      Initializes and returns a new passport scanner with the provided container view controller and delegate
@@ -42,7 +42,7 @@ public class DocumentScanner: NSObject {
      - Returns: ready-to-use passport scanner instance
      */
 
-    public init(containerVC: UIViewController, withDelegate delegate: PassportScannerDelegate) {
+    public init(containerVC: UIViewController, withDelegate delegate: DocumentScannerDelegate) {
         self.delegate = delegate
         self.viewController = containerVC
     }
@@ -71,7 +71,7 @@ public class DocumentScanner: NSObject {
                 overlayView.codeBorder.layer.borderWidth = 5.0
                 overlayView.codeBorder.layer.borderColor = UIColor.redColor().CGColor
                 
-                overlayView.passportScanner = self
+                overlayView.scanner = self
                 
                 self.imagePicker.cameraOverlayView = overlayView
             })
@@ -80,7 +80,7 @@ public class DocumentScanner: NSObject {
             let error = NSError(domain: DOErrorDomain, code: 1, userInfo: [
                 NSLocalizedDescriptionKey : "Scanner unnable to find camera on this device"
                 ])
-            self.delegate.didFailed(error)
+            self.delegate.didFailedWithError(error)
         }
     }
     
@@ -103,20 +103,20 @@ extension DocumentScanner: UIImagePickerControllerDelegate, UINavigationControll
         
         viewController.dismissViewControllerAnimated(true, completion: nil)
         
-        delegate.willBeginScan(withImage: cropped)
+        delegate.willBeginScanImage(cropped)
         
         NSOperationQueue().addOperationWithBlock {
             let infoOpt = DocumentInfo(image: cropped, tesseractDelegate: self.delegate)
             
             dispatch_async(dispatch_get_main_queue()) {
                 if let info = infoOpt {
-                    self.delegate.didFinishScan(withInfo: info)
+                    self.delegate.didFinishScanWithInfo(info)
                 }
                 else {
                     let error = NSError(domain: DOErrorDomain, code: 0, userInfo: [
                         NSLocalizedDescriptionKey : "Scanner unnable recognize passport machine readable code from camera picture"
                         ])
-                    self.delegate.didFailed(error)
+                    self.delegate.didFailedWithError(error)
                 }
             }
         }

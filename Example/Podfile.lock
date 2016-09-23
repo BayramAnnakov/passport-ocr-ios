@@ -1,5 +1,5 @@
 PODS:
-  - DocumentsOCR (0.4.4):
+  - DocumentsOCR (0.5.0):
     - GPUImage
     - PodAsset
     - TesseractOCRiOS (~> 4.0.0)
@@ -17,7 +17,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  DocumentsOCR: 03ac59fe035d8af9cfdc33148184126b654b3680
+  DocumentsOCR: 0b6ea134b4f1a67482e96de208985924446fb259
   GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
   PodAsset: d6e724524e63725ef0c579354819ccc2dcbcf920
   TesseractOCRiOS: 90638afbe43d082433f2e76b384c7901d23956df
