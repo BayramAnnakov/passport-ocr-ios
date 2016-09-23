@@ -12,7 +12,7 @@ import DocumentsOCR
 
 class PassportViewController: UITableViewController {
 
-    var scanner: PassportScanner!
+    var scanner: DocumentScanner!
     
     var selectedTextField: PassportTextField!
     
@@ -37,7 +37,10 @@ class PassportViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        scanner = PassportScanner(containerVC: self, withDelegate: self)
+        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).first! as NSString
+        NSLog("\(paths)")
+        
+        scanner = DocumentScanner(containerVC: self, withDelegate: self)
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
         self.view.addGestureRecognizer(tapGesture)
@@ -91,7 +94,7 @@ extension PassportViewController: PassportScannerDelegate {
         self.cameraImageView.image = image
     }
     
-    func didFinishScan(withInfo info: PassportInfo) {
+    func didFinishScan(withInfo info: DocumentInfo) {
         NSLog("Info: \(info)")
         
         countryField.text = info.issuingCountryCode
@@ -136,19 +139,6 @@ extension PassportViewController: UITextFieldDelegate {
         
         return true
     }
-    
-    // TODO: create mask for text fields?
-    
-//    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
-//        guard let field = textField as? PassportTextField else {
-//            NSLog("Ошибка: неверный тип текстового поля")
-//            
-//            
-//            return false
-//        }
-//        
-//        return false
-//    }
 }
 
 extension PassportViewController: UIPickerViewDelegate, UIPickerViewDataSource {

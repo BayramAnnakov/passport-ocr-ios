@@ -19,7 +19,6 @@
 		87FFBC9D1D8FEE84007535B1 /* PassportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FFBC9A1D8FEE84007535B1 /* PassportViewController.swift */; };
 		87FFBC9E1D8FEE84007535B1 /* CountryCodes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 87FFBC9B1D8FEE84007535B1 /* CountryCodes.txt */; };
 		87FFBC9F1D8FEE84007535B1 /* PassportTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FFBC9C1D8FEE84007535B1 /* PassportTextField.swift */; };
-		87FFBCA81D900F90007535B1 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 87FFBCA71D900F90007535B1 /* tessdata */; };
 		BA463438023EAA70F6C811EC /* Pods_DocumentsOCR_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE04D7D7E27213E2CE139619 /* Pods_DocumentsOCR_Example.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,7 +53,6 @@
 		87FFBC9A1D8FEE84007535B1 /* PassportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassportViewController.swift; sourceTree = "<group>"; };
 		87FFBC9B1D8FEE84007535B1 /* CountryCodes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CountryCodes.txt; sourceTree = "<group>"; };
 		87FFBC9C1D8FEE84007535B1 /* PassportTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassportTextField.swift; sourceTree = "<group>"; };
-		87FFBCA71D900F90007535B1 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = SOURCE_ROOT; };
 		BB580A64429D6FB96AE85D50 /* Pods-DocumentsOCR_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentsOCR_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentsOCR_Example/Pods-DocumentsOCR_Example.release.xcconfig"; sourceTree = "<group>"; };
 		CE04D7D7E27213E2CE139619 /* Pods_DocumentsOCR_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DocumentsOCR_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2A4B9B90F76174B4F84DD5A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -122,7 +120,6 @@
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				871A377B1D92D3E80036C098 /* Extensions */,
-				87FFBCA71D900F90007535B1 /* tessdata */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 			);
 			name = "Example for DocumentsOCR";
@@ -278,7 +275,6 @@
 			files = (
 				87FFBC9E1D8FEE84007535B1 /* CountryCodes.txt in Resources */,
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
-				87FFBCA81D900F90007535B1 /* tessdata in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
@@ -321,7 +317,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		8C7BA0FAB8F4AF08A059E543 /* [CP] Check Pods Manifest.lock */ = {
@@ -336,7 +332,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		90231004C796B9EE197E1223 /* [CP] Copy Pods Resources */ = {

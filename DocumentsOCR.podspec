@@ -32,7 +32,8 @@ Pod::Spec.new do |s|
   s.resource_bundles = {
   	'DocumentsOCR' => ['DocumentsOCR/Assets/CameraOverlayViewController.xib',
   						  'DocumentsOCR/Assets/passportPattern.txt',
-                        'DocumentsOCR/Assets/*.png']
+                        'DocumentsOCR/Assets/*.png',
+                        'DocumentsOCR/Assets/tessdata/eng.traineddata']
   }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
@@ -42,4 +43,6 @@ Pod::Spec.new do |s|
   s.dependency 'PodAsset'
   s.dependency 'UIImage-Resize'
   s.dependency 'GPUImage'
+  
+  #s.pod_target_xcconfig = { 'ENABLE_BITCODE' => 'NO' }
 end

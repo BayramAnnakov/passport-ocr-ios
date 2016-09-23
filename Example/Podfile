@@ -9,3 +9,4 @@ target 'DocumentsOCR_Example' do
     
   end
 end
+

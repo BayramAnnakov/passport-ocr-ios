@@ -8,6 +8,8 @@
 
 import Foundation
 
+public let DOErrorDomain = "DocumentsOCRErrorDomain"
+
 struct NibNames {
     static let cameraOverlayViewController = "CameraOverlayViewController"
 }
@@ -28,11 +30,6 @@ struct Constants {
     
         return result
     }
-}
-
-public struct ErrorDomains {
-    public static let CameraNotFound = "CameraNotFoundErrorDomain"
-    public static let RecognitionFailed = "RecognitionFailedErrorDomain"
 }
 
 

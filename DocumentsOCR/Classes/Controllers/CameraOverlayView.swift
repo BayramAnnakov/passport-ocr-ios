@@ -12,7 +12,7 @@ public class CameraOverlayView: UIView {
     
     @IBOutlet weak var codeBorder: UIView!
     
-    var passportScanner: PassportScanner!
+    var passportScanner: DocumentScanner!
     
     @IBAction func cancelButtonClicked(sender: UIButton) {
         passportScanner.viewController.dismissViewControllerAnimated(true, completion: nil)
