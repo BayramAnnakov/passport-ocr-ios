@@ -77,3 +77,5 @@ DocumentsOCR is available under the MIT license. See the LICENSE file for more i
 - [ ] check visa document recognitions
 - [ ] unit tests for camera shoots
 - [ ] take many pictures when "take shoot" button pressed, then choose best image for recognition
+
+TST
